@@ -31,7 +31,7 @@ public class BoggleView extends Region {
         for(Dobbelsteen d : dobbelstenen) {
             DobbelsteenView dv = new DobbelsteenView(d);
             dv.setTranslateX(100 * getal);
-            dv.setTranslateY(120 * lengte);
+            dv.setTranslateY(110 * lengte);
             
             getChildren().add(dv);
         }

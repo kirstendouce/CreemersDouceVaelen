@@ -24,10 +24,12 @@ public class BoggleView extends Region {
     
     public void update()
     {
-        Rectangle achterkant = new Rectangle(90,90);
         getChildren().clear();
         ArrayList<Dobbelsteen> dobbelstenen = model.getDobbelstenen();
-        
+        for(Dobbelsteen d : dobbelstenen) {
+            DobbelsteenView dv = new DobbelsteenView(d);
+            getChildren().add(dv);
+        }
         
         
     }

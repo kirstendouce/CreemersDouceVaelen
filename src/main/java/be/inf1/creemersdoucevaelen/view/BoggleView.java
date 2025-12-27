@@ -15,9 +15,9 @@ import javafx.scene.shape.Rectangle;
  * @author Kirsten Doucé
  */
 public class BoggleView extends Region {
-    private Dobbelsteen model;
+    private Boggle model;
 
-    public BoggleView(Dobbelsteen model) {
+    public BoggleView(Boggle model) {
         this.model = model;
         update();
     }
@@ -26,7 +26,7 @@ public class BoggleView extends Region {
     {
         Rectangle achterkant = new Rectangle(90,90);
         getChildren().clear();
-        ArrayList<Boggle> boggle = model.getLetter();
+        ArrayList<Dobbelsteen> dobbelstenen = model.getDobbelstenen();
         
         
         

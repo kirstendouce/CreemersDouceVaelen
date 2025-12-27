@@ -8,6 +8,17 @@ package be.inf1.creemersdoucevaelen.model;
  *
  * @author Kirsten Doucé
  */
-public class Bord {
+public class Dobbelsteen {
+    private int nr;
+
+    public Dobbelsteen(int nr) {
+        this.nr = nr;
+    }
+    
+    
+    
+    
+    
+    
     
 }

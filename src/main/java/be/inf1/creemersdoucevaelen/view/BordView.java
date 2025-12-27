@@ -4,10 +4,28 @@
  */
 package be.inf1.creemersdoucevaelen.view;
 
+import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
+import javafx.scene.layout.Region;
+import javafx.scene.shape.Rectangle;
+
 /**
  *
  * @author Kirsten Doucé
  */
-public class BordView {
+public class BordView extends Region {
+    private Dobbelsteen model;
+
+    public BordView(Dobbelsteen model) {
+        this.model = model;
+        update();
+    }
+    
+    public void update()
+    {
+        Rectangle achterkant = new Rectangle(40,40);
+        
+        
+    }
+    
     
 }

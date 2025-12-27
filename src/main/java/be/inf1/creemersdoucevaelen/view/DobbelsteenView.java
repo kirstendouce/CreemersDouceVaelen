@@ -25,8 +25,8 @@ public class DobbelsteenView extends Region {
         
         Text tekst = new Text(dobbelsteen.getLetter());
         
-        tekst.setX(35);
-        tekst.setY(55);
+        tekst.setX(45);
+        tekst.setY(45);
         
         getChildren().addAll(achterkant, tekst);
     } 

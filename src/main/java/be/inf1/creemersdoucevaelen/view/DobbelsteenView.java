@@ -17,7 +17,7 @@ import javafx.scene.text.Text;
  */
 public class DobbelsteenView extends Region {
 
-    private Object getChildren;
+    
     public  DobbelsteenView(Dobbelsteen dobbelsteen){
         Rectangle achterkant = new Rectangle(90,90);
         achterkant.setFill(Color.BEIGE);

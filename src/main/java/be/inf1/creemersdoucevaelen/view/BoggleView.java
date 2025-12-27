@@ -26,22 +26,15 @@ public class BoggleView extends Region {
     {
         getChildren().clear();
         ArrayList<Dobbelsteen> dobbelstenen = model.getDobbelstenen();
-        int getal = 0;
-        int lengte = 0;
-        for(int i = 0 ; i < dobbelstenen.size(); i++);
-
-        if (lengte <= 4 ){ 
+        int getal = 4 ;
+        int lengte = 4 ;
         for(Dobbelsteen d : dobbelstenen) {
             DobbelsteenView dv = new DobbelsteenView(d);
             dv.setTranslateX(100 * getal);
-            getal++;
             dv.setTranslateY(120 * lengte);
-            if(lengte == 4){
-                getal = 0;
-                lengte ++;
-            }
+            
             getChildren().add(dv);
-        }}
+        }
         }
         
         

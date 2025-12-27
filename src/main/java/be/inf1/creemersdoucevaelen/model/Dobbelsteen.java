@@ -106,20 +106,10 @@ public class Dobbelsteen {
 
     /**
      * @return the letter
-     *//*
-    public Boggle getLetter() {
-        return letter;
-    }*/
-
-    /**
-     * @param letter the letter to set
      */
-    /*public void setLetter(Boggle letter) {
-        this.letter = letter;
-    }*/
-
-    
-    
+    public String getLetter() {
+        return letter;
+    }
 }
     
     

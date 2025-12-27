@@ -12,10 +12,10 @@ import javafx.scene.shape.Rectangle;
  *
  * @author Kirsten Doucé
  */
-public class BordView extends Region {
+public class BoggleView extends Region {
     private Dobbelsteen model;
 
-    public BordView(Dobbelsteen model) {
+    public BoggleView(Dobbelsteen model) {
         this.model = model;
         update();
     }

@@ -9,10 +9,35 @@ package be.inf1.creemersdoucevaelen.model;
  * @author Kirsten Doucé
  */
 public class Dobbelsteen {
-    private int nr;
+    private Boggle letter;
 
-    public Dobbelsteen(int nr) {
-        this.nr = nr;
+   
+
+    /**
+     * constructor voor elke dobbelsteen
+     * @param letter 
+     */
+    public Dobbelsteen(Boggle letter) {
+        this.letter = letter;
+    }
+
+    /**
+     * @return the letter
+     */
+    public Boggle getLetter() {
+        return letter;
+    }
+
+    /**
+     * @param letter the letter to set
+     */
+    public void setLetter(Boggle letter) {
+        this.letter = letter;
+    }
+    
+    
+    
+    
     }
     
     

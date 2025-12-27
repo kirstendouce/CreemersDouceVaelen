@@ -22,7 +22,8 @@ public class BoggleView extends Region {
     
     public void update()
     {
-        Rectangle achterkant = new Rectangle(40,40);
+        getChildren().clear();
+        Rectangle achterkant = new Rectangle(90,90);
         
         
     }

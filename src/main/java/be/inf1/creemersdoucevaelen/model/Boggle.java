@@ -6,8 +6,16 @@ package be.inf1.creemersdoucevaelen.model;
 
 /**
  *
- * @author Kirsten Doucé
+ * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class Boggle {
     
+    public void bord() {
+        //spelbord aanmaken
+    }
+    
+    
+    public void opnieuw() {
+        //OPnieuw spelbord klaarmaken
+    }
 }

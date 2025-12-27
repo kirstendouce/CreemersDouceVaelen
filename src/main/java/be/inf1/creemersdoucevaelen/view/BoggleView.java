@@ -4,7 +4,9 @@
  */
 package be.inf1.creemersdoucevaelen.view;
 
+import be.inf1.creemersdoucevaelen.model.Boggle;
 import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
+import java.util.ArrayList;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.Rectangle;
 
@@ -22,8 +24,10 @@ public class BoggleView extends Region {
     
     public void update()
     {
-        getChildren().clear();
         Rectangle achterkant = new Rectangle(90,90);
+        getChildren().clear();
+        ArrayList<Boggle> boggle = model.getLetter();
+        
         
         
     }

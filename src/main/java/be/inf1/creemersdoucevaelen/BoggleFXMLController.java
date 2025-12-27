@@ -4,6 +4,8 @@
  */
 package be.inf1.creemersdoucevaelen;
 
+import be.inf1.creemersdoucevaelen.model.Boggle;
+import be.inf1.creemersdoucevaelen.view.BoggleView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -14,13 +16,17 @@ import javafx.fxml.Initializable;
  * @author Kirsten Doucé
  */
 public class BoggleFXMLController implements Initializable {
-
+    
+    private Boggle model;
+    private BoggleView view; 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        model = new Boggle();
+        view  = new BoggleView(model);
     }    
     
 }

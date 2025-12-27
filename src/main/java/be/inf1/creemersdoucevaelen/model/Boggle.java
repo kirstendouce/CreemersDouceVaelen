@@ -8,6 +8,6 @@ package be.inf1.creemersdoucevaelen.model;
  *
  * @author Kirsten Doucé
  */
-public class Boogle {
+public class Boggle {
     
 }

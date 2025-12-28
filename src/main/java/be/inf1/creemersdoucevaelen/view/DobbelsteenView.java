@@ -16,7 +16,8 @@ import javafx.scene.text.Text;
  * @author mante
  */
 public class DobbelsteenView extends Region {
-
+       private Dobbelsteen model;
+       
     
     public  DobbelsteenView(Dobbelsteen dobbelsteen){
         Rectangle achterkant = new Rectangle(90,90);

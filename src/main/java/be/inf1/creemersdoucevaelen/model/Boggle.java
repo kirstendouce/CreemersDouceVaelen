@@ -33,6 +33,6 @@ public class Boggle {
                bord [i][j] = new Dobbelsteen();
             }
         }
-    } 
+    } //hallo
 }
 

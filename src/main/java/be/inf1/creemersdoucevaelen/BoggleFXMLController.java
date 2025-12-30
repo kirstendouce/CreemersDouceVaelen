@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author Kirsten Doucé
+ * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class BoggleFXMLController implements Initializable {
     

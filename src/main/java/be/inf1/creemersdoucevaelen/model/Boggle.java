@@ -12,6 +12,9 @@ import java.util.ArrayList;
  */
 public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
+    private Dobbelsteen dobbelsteen;
+    private Dobbelsteen[][] bord;
+    private int rij, kolom;
     
     public Boggle(){
         dobbelstenen = new ArrayList<>();
@@ -25,14 +28,11 @@ public class Boggle {
     
     public void bord() {
         //spelbord aanmaken
-    }
-    
-    
-    public void opnieuw() {
-        //OPnieuw spelbord klaarmaken
-    }
-
-    
-        
-    }
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+               bord [i][j] = new Dobbelsteen();
+            }
+        }
+    } 
+}
 

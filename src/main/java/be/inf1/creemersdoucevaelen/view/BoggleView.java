@@ -28,14 +28,20 @@ public class BoggleView extends Region {
         
         model.maakBord();
         ArrayList<Dobbelsteen> dobbelstenen = model.getDobbelstenen();
-        int getal = 4 ;
-        int lengte = 4 ;
+        int getal = 0 ;
+        int lengte = 0 ;
         for(Dobbelsteen d : dobbelstenen) {
             DobbelsteenView dv = new DobbelsteenView(d);
             dv.setTranslateX(100 * getal);
             dv.setTranslateY(110 * lengte);
             
             getChildren().add(dv);
+            
+            getal++;
+            if (getal == 4) {
+                getal = 0;
+                lengte++;
+            }
         }
     }
 }

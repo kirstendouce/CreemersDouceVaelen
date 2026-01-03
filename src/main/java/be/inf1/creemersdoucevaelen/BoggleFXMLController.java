@@ -4,13 +4,13 @@
  */
 package be.inf1.creemersdoucevaelen;
 
+import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
 import be.inf1.creemersdoucevaelen.model.Boggle;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -35,6 +35,8 @@ public class BoggleFXMLController implements Initializable {
         view  = new BoggleView(model);
         
         anpBord.getChildren().add(view);
+        
+        update();
     }    
     
     public void update() {

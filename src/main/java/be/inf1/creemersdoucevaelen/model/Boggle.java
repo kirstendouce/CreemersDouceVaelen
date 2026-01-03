@@ -14,25 +14,29 @@ public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
     private Dobbelsteen dobbelsteen;
     private Dobbelsteen[][] bord;
-    private int rij, kolom;
     
     public Boggle(){
-        dobbelstenen = new ArrayList<>();
+    /*    dobbelstenen = new ArrayList<>();
         for (int i = 0; i < 16; i++){
             dobbelstenen.add(new Dobbelsteen());
-        }
+        }*/
+        maakBord();
     }
     public ArrayList<Dobbelsteen> getDobbelstenen() {
         return dobbelstenen;
     }
     
-    public void bord() {
+    public void maakBord() {
         //spelbord aanmaken
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < 4; j++) {
                bord [i][j] = new Dobbelsteen();
             }
         }
-    } //hallo
+    } 
+    
+    public Dobbelsteen getDobbelsteen(int x, int y) {
+        return bord[x][y];
+    }
 }
 

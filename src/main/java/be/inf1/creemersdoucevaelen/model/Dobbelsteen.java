@@ -14,7 +14,6 @@ public class Dobbelsteen {
 
     /**
      * constructor voor elke dobbelsteen
-     * @param letter 
      */
     public Dobbelsteen() {
         nummer =(Math.random()*100)/4;

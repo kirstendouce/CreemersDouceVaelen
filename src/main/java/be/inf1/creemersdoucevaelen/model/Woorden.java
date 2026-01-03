@@ -6,7 +6,7 @@ package be.inf1.creemersdoucevaelen.model;
 
 /**
  *
- * @author mante
+ * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public enum Woorden {
     

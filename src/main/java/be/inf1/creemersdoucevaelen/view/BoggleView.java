@@ -12,7 +12,7 @@ import javafx.scene.shape.Rectangle;
 
 /**
  *
- * @author Kirsten Doucé
+ * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class BoggleView extends Region {
     private Boggle model;

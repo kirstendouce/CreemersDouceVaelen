@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 
 /**
  *
- * @author mante
+ * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class DobbelsteenView extends Region {
        private Dobbelsteen model;

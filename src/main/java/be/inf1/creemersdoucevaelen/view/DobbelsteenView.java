@@ -27,7 +27,7 @@ public class DobbelsteenView extends Region {
         
         Text tekst = new Text(model.getLetter());
         
-        tekst.setX(35);
+        tekst.setX(30);
         tekst.setY(35);
         
         getChildren().addAll(achterkant, tekst);

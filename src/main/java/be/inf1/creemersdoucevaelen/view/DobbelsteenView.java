@@ -19,18 +19,23 @@ public class DobbelsteenView extends Region {
        private Dobbelsteen model;
        
     
-    public  DobbelsteenView(Dobbelsteen dobbelsteen){
+    public  DobbelsteenView(Dobbelsteen model){
+        this.model = model;
         Rectangle achterkant = new Rectangle(90,90);
         achterkant.setFill(Color.BEIGE);
         achterkant.setStroke(Color.BLACK); 
         
-        Text tekst = new Text(dobbelsteen.getLetter());
+        Text tekst = new Text(model.getLetter());
         
         tekst.setX(45);
         tekst.setY(45);
         
         getChildren().addAll(achterkant, tekst);
-    } 
     }
+    
+    public Dobbelsteen getModel() {
+        return model;
+    }
+}
 
     

@@ -21,14 +21,14 @@ public class DobbelsteenView extends Region {
     
     public  DobbelsteenView(Dobbelsteen model){
         this.model = model;
-        Rectangle achterkant = new Rectangle(50,50);
+        Rectangle achterkant = new Rectangle(70,70);
         achterkant.setFill(Color.BEIGE);
         achterkant.setStroke(Color.BLACK); 
         
         Text tekst = new Text(model.getLetter());
         
-        tekst.setX(25);
-        tekst.setY(25);
+        tekst.setX(35);
+        tekst.setY(35);
         
         getChildren().addAll(achterkant, tekst);
     }

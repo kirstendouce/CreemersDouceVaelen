@@ -28,8 +28,14 @@ public class Boggle {
         }
     } 
     
-    public Dobbelsteen getDobbelsteen(int x, int y) {
-        return bord[x][y];
+    public ArrayList<Dobbelsteen> getDobbelstenen() {
+        dobbelstenen = new ArrayList<>();
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+               dobbelstenen.add(bord[i][j]);
+            }
+        }
+        return dobbelstenen;
     }
 }
 

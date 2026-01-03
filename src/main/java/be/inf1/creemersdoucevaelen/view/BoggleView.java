@@ -25,6 +25,8 @@ public class BoggleView extends Region {
     public void update()
     {
         getChildren().clear();
+        
+        model.maakBord();
         ArrayList<Dobbelsteen> dobbelstenen = model.getDobbelstenen();
         int getal = 4 ;
         int lengte = 4 ;
@@ -35,10 +37,5 @@ public class BoggleView extends Region {
             
             getChildren().add(dv);
         }
-        }
-        
-        
     }
-    
-    
-
+}

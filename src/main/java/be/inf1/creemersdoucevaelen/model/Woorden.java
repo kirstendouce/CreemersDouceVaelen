@@ -25,10 +25,10 @@ public class Woorden {
 
     private void leesWoorden() {
         try {
-            InputStream is = getClass().getResourceAsStream("/woorden.txt");
+            InputStream is = getClass().getResourceAsStream("/wordlist.txt");
 
             if (is == null) {
-                System.out.println("woorden.txt niet gevonden");
+                System.out.println("wordlist.txt niet gevonden");
                 return;
             }
 

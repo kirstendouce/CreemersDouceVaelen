@@ -16,14 +16,7 @@ public class Boggle {
     private Dobbelsteen[][] bord;
     
     public Boggle(){
-    /*    dobbelstenen = new ArrayList<>();
-        for (int i = 0; i < 16; i++){
-            dobbelstenen.add(new Dobbelsteen());
-        }*/
         maakBord();
-    }
-    public ArrayList<Dobbelsteen> getDobbelstenen() {
-        return dobbelstenen;
     }
     
     public void maakBord() {

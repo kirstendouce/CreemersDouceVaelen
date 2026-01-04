@@ -58,12 +58,13 @@ public class BoggleFXMLController implements Initializable {
     @FXML
     void geklikt(ActionEvent event) {
         model.maakBord();
-        view.update();
+        update();
     }
     
     @FXML
     void controleerWoord(ActionEvent event) {
-        
+       model.woordcontrole() ;
+       update();
     }
     
     public void update() {

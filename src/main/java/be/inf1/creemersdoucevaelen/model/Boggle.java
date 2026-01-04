@@ -38,5 +38,9 @@ public class Boggle {
         }
         return dobbelstenen;
     }
+    
+    public void woordcontrole() {
+        
+    }
 }
 

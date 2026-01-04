@@ -19,6 +19,7 @@ public class Boggle {
     private int punten;
     
     public Boggle(){
+        woordUitBoek = new Woorden();
         maakBord();
     }
     

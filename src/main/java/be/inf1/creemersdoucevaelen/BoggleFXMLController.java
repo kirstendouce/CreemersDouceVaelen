@@ -66,10 +66,10 @@ public class BoggleFXMLController implements Initializable {
        //model.woordcontrole();
        if(model.woordcontrole()) {
            lblPunten.setText(model.getPunten() + "" );
+           update();
        } else {
            view.foutWoord();
        }
-       update();
     }
     
     public void update() {

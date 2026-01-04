@@ -7,7 +7,7 @@ package be.inf1.creemersdoucevaelen.model;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,10 +16,10 @@ import java.util.HashSet;
 
 public class Woorden {
 
-    private HashSet<String> woorden;
+    private ArrayList<String> woorden;
 
     public Woorden() {
-        woorden = new HashSet<>();
+        woorden = new ArrayList<>();
         leesWoorden();
     }
 
@@ -47,7 +47,10 @@ public class Woorden {
     }
 
     public boolean isGeldigWoord(String woord) {
-        return woord.length() >= 3 &&
-               woorden.contains(woord.toUpperCase());
+        if (woord.length() < 3) {
+            return false;
+        }
+        
+        return woorden.contains(woord.toUpperCase());
     }
 }

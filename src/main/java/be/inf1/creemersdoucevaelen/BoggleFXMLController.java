@@ -6,6 +6,8 @@ package be.inf1.creemersdoucevaelen;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import be.inf1.creemersdoucevaelen.model.Boggle;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
 import java.net.URL;
@@ -25,6 +27,14 @@ public class BoggleFXMLController implements Initializable {
     @FXML
     private AnchorPane anpBord;
     
+    @FXML
+    private Button lbl;
+
+    @FXML
+    private Label lblPunten;
+
+    @FXML
+    private Label lblScore;
     /**
      * Initializes the controller class.
      */

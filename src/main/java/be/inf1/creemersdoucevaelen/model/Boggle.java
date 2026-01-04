@@ -14,6 +14,7 @@ public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
     private Dobbelsteen dobbelsteen;
     private Dobbelsteen[][] bord;
+    private Woorden woord;
     
     public Boggle(){
         maakBord();

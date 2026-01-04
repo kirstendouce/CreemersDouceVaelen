@@ -25,7 +25,7 @@ public class Woorden {
 
     private void leesWoorden() {
         try {
-            InputStream is = getClass().getResourceAsStream("/wordlist.txt");
+            InputStream is = getClass().getResourceAsStream("/be.inf1.creemersdoucevaelen/wordlist.txt");
 
             if (is == null) {
                 System.out.println("wordlist.txt niet gevonden");

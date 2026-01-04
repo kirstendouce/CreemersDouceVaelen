@@ -63,8 +63,12 @@ public class BoggleFXMLController implements Initializable {
     
     @FXML
     void controleerWoord(ActionEvent event) {
-       model.woordcontrole();
-       //score toevoegen aan lblPunten
+       //model.woordcontrole();
+       if(model.woordcontrole()) {
+           lblPunten.setText(model.getPunten() + "" );
+       } else {
+           view.foutWoord();
+       }
        update();
     }
     

@@ -14,7 +14,9 @@ public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
     private Dobbelsteen dobbelsteen;
     private Dobbelsteen[][] bord;
-    private Woorden woord;
+    private Woorden woordUitBoek;
+    private String woord;
+    private int punten;
     
     public Boggle(){
         maakBord();
@@ -40,8 +42,55 @@ public class Boggle {
         return dobbelstenen;
     }
     
-    public void woordcontrole() {
-        
+    public boolean woordcontrole() {
+        //Is het opgegeven woord een woord uit het woordenboek?
+        if(woordUitBoek.isGeldigWoord(woord)) {
+            setPunten(aantalPunten());
+            return true;
+        } else {
+            return false; 
+        }
+    }
+    
+    public int aantalPunten() {
+        switch(woord.length()){
+            case 3:
+            case 4:
+                punten = 1;
+                break;
+            case 5:
+                punten = 2;
+                break;
+            case 6:
+                punten = 3;
+                break;
+            case 7:
+                punten = 5;
+                break;
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+            case 16:    
+                punten = 11;
+                break;
+            default: 
+                punten = 0;
+                break;
+        }
+        return punten;
+    }
+    
+    public void setPunten(int punten) {
+        this.punten = punten;
+    }
+    
+    public int getPunten() {
+        return punten;
     }
 }
 

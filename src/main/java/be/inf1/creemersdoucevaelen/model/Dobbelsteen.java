@@ -99,6 +99,7 @@ public class Dobbelsteen {
                 break;
             default: 
                 letter = "A";
+                break;
         }
         
     }

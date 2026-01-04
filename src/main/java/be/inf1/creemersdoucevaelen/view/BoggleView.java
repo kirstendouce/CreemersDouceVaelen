@@ -7,6 +7,7 @@ package be.inf1.creemersdoucevaelen.view;
 import be.inf1.creemersdoucevaelen.model.Boggle;
 import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
 import java.util.ArrayList;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.Rectangle;
 
@@ -44,6 +45,15 @@ public class BoggleView extends Region {
                 getal = 0;
                 lengte++;
             }
+            
+            
         }
+    }
+    
+    public void foutWoord() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Geen woord");
+        alert.setContentText("Sorry, maar het opgegeven woord klopt niet. Probeer een ander woord!");
+        alert.showAndWait();
     }
 }

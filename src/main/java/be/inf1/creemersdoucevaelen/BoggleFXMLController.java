@@ -36,6 +36,10 @@ public class BoggleFXMLController implements Initializable {
 
     @FXML
     private Label lblScore;
+    
+    @FXML
+    private Button btnControleer;
+     
     /**
      * Initializes the controller class.
      */
@@ -55,6 +59,11 @@ public class BoggleFXMLController implements Initializable {
     void geklikt(ActionEvent event) {
         model.maakBord();
         view.update();
+    }
+    
+    @FXML
+    void controleerWoord(ActionEvent event) {
+        
     }
     
     public void update() {

@@ -12,6 +12,7 @@ import be.inf1.creemersdoucevaelen.model.Boggle;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 /**
@@ -28,7 +29,7 @@ public class BoggleFXMLController implements Initializable {
     private AnchorPane anpBord;
     
     @FXML
-    private Button lbl;
+    private Button btnBord;
 
     @FXML
     private Label lblPunten;
@@ -46,8 +47,15 @@ public class BoggleFXMLController implements Initializable {
         
         anpBord.getChildren().add(view);
         
+        
         update();
     }    
+    
+    @FXML
+    void geklikt(ActionEvent event) {
+        model.maakBord();
+        view.update();
+    }
     
     public void update() {
         view.update();

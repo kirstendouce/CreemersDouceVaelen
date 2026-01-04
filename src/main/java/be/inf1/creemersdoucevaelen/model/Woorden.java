@@ -47,10 +47,10 @@ public class Woorden {
     }
 
     public boolean isGeldigWoord(String woord) {
-        if (woord.length() < 3) {
+        if (woord == null || woord.length() < 3) {
             return false;
         }
         
-        return woorden.contains(woord.toUpperCase());
+        return woorden.contains(woord.trim().toUpperCase());
     }
 }

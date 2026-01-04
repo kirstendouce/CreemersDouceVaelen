@@ -15,7 +15,7 @@ public class Boggle {
     private Dobbelsteen dobbelsteen;
     private Dobbelsteen[][] bord;
     private Woorden woordUitBoek;
-    private String woord;
+    private String woord = "aaa";
     private int punten;
     
     public Boggle(){

@@ -30,10 +30,12 @@ public class BoggleView extends Region {
         ArrayList<Dobbelsteen> dobbelstenen = model.getDobbelstenen();
         int getal = 0 ;
         int lengte = 0 ;
+        int beginX = 150;
+        int beginY = 50;
         for(Dobbelsteen d : dobbelstenen) {
             DobbelsteenView dv = new DobbelsteenView(d);
-            dv.setTranslateX(80 * getal);
-            dv.setTranslateY(80 * lengte);
+            dv.setTranslateX(beginX + 80 * getal);
+            dv.setTranslateY(beginY + 80 * lengte);
             
             getChildren().add(dv);
             

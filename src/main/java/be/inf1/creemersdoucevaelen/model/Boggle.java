@@ -4,6 +4,7 @@
  */
 package be.inf1.creemersdoucevaelen.model;
 
+import be.inf1.creemersdoucevaelen.view.DobbelsteenView;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  */
 public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
+    private ArrayList<Dobbelsteen> geselecteerd;
     private Dobbelsteen dobbelsteen;
     private Dobbelsteen[][] bord;
     private Woorden woordUitBoek;
@@ -19,8 +21,24 @@ public class Boggle {
     private int punten;
     
     public Boggle(){
+        geselecteerd = new ArrayList<>();
         woordUitBoek = new Woorden();
         maakBord();
+    }
+    
+    public void selecteerDobbelstenen(Dobbelsteen d){
+        if(!d.isGeselecteerd())
+        {
+            d.selecteren();
+            geselecteerd.add(d);
+        }
+    }
+    
+    public void resetSelectie(){
+        for(Dobbelsteen d : geselecteerd){
+            d.deselecteren();
+        }
+        geselecteerd.clear();
     }
     
     public void maakBord() {
@@ -92,6 +110,7 @@ public class Boggle {
     
     public int getPunten() {
         return punten;
-    }
+    }  
+    
 }
 

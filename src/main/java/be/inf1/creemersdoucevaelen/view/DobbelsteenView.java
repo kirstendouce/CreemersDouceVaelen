@@ -17,11 +17,14 @@ import javafx.scene.text.Text;
  */
 public class DobbelsteenView extends Region {
        private Dobbelsteen model;
+       private Rectangle achterkant;
+       
+       
        
     
     public  DobbelsteenView(Dobbelsteen model){
         this.model = model;
-        Rectangle achterkant = new Rectangle(70,70);
+        achterkant = new Rectangle(70,70);
         achterkant.setFill(Color.BEIGE);
         achterkant.setStroke(Color.BLACK); 
         
@@ -33,9 +36,18 @@ public class DobbelsteenView extends Region {
         getChildren().addAll(achterkant, tekst);
     }
     
+            
     public Dobbelsteen getModel() {
         return model;
     }
+    
+    
+    public void update(){
+        if(model.isGeselecteerd()){
+            achterkant.setFill(Color.BLUEVIOLET);     
+        }
+    }
 }
+
 
     

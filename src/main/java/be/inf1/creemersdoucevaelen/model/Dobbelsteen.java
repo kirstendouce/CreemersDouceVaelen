@@ -11,7 +11,8 @@ package be.inf1.creemersdoucevaelen.model;
 public class Dobbelsteen {
     private double nummer;
     private String letter;
-
+    private boolean geselecteerd;
+ 
     /**
      * constructor voor elke dobbelsteen
      */
@@ -110,6 +111,23 @@ public class Dobbelsteen {
     public String getLetter() {
         return letter;
     }
+    
+    public boolean isGeselecteerd(){
+        return geselecteerd;
+    }
+    
+    public void selecteren(){
+         geselecteerd = true;
+    }
+    
+    public void deselecteren(){
+         geselecteerd = false;
+    }
+    
+    public void setGeselecteerd(boolean geselecteerd){
+        this.geselecteerd = geselecteerd;
+    }
+
 }
     
     

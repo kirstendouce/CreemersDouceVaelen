@@ -6,8 +6,12 @@ package be.inf1.creemersdoucevaelen.model;
 
 /**
  *
- * @author Kirsten Doucé
+ * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class Spelregels {
     //Wat zijn de regels?
+    //Woord min 3 letters
+    //Puntentelling
+    //Enkel vertikaal, horizontaal, en diagonaal
+    //
 }

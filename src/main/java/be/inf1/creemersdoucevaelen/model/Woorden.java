@@ -24,24 +24,27 @@ public class Woorden {
     }
 
     private void leesWoorden() {
-        try {
-            InputStream is = getClass().getResourceAsStream("/be.inf1.creemersdoucevaelen/wordlist.txt");
+        // Pad vanaf root van classpath
+        String pad = "/be/inf1/creemersdoucevaelen/wordlist.txt";
+
+        // Dit haalt het bestand uit de resources folder
+        try (InputStream is = getClass().getResourceAsStream(pad)) {
 
             if (is == null) {
-                System.out.println("wordlist.txt niet gevonden");
+                System.out.println("wordlist.txt niet gevonden op pad: " + pad);
                 return;
             }
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            String regel;
-
-            while ((regel = reader.readLine()) != null) {
-                woorden.add(regel.trim().toUpperCase());
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+                String regel;
+                while ((regel = reader.readLine()) != null) {
+                    woorden.add(regel.trim().toUpperCase());
+                    //System.out.println(regel.trim().toUpperCase());
+                }
             }
 
-            reader.close();
-
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Fout bij inlezen woordenbestand");
         }
     }
@@ -50,7 +53,6 @@ public class Woorden {
         if (woord == null || woord.length() < 3) {
             return false;
         }
-        
         return woorden.contains(woord.trim().toUpperCase());
     }
 }

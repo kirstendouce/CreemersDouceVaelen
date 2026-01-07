@@ -13,32 +13,14 @@ import java.util.ArrayList;
  */
 public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
-    private ArrayList<Dobbelsteen> geselecteerd;
-    private Dobbelsteen dobbelsteen;
     private Dobbelsteen[][] bord;
     private Woorden woordUitBoek;
     private String woord;
     private int punten;
     
     public Boggle(){
-        geselecteerd = new ArrayList<>();
         woordUitBoek = new Woorden();
         maakBord();
-    }
-    
-    public void selecteerDobbelstenen(Dobbelsteen d){
-        if(!d.isGeselecteerd())
-        {
-            d.selecteren();
-            geselecteerd.add(d);
-        }
-    }
-    
-    public void resetSelectie(){
-        for(Dobbelsteen d : geselecteerd){
-            d.deselecteren();
-        }
-        geselecteerd.clear();
     }
     
     public void maakBord() {

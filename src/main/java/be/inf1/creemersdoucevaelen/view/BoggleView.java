@@ -45,17 +45,6 @@ public class BoggleView extends Region {
                 getal = 0;
                 lengte++;
             }
-            
-            dv.setOnMouseClicked(e -> {
-                if(!d.isGeselecteerd()){
-                  d.setGeselecteerd(true);  
-                }
-                else{
-                    d.setGeselecteerd(false);
-                }
-                update();
-            }
-            );
         }
     }
     
@@ -65,10 +54,5 @@ public class BoggleView extends Region {
         alert.setContentText("Sorry, maar het opgegeven woord klopt niet. Probeer een ander woord!");
         alert.showAndWait();
     }
-    
-    public Boggle getDobbelsteen(){
-        return model;
-    }
-    
-    
+     
 }

@@ -34,6 +34,15 @@ public class DobbelsteenView extends Region {
         tekst.setY(40);
         
         getChildren().addAll(achterkant, tekst);
+        
+        setOnMouseClicked(e -> {
+            if(model.isGeselecteerd()) {
+                model.setGeselecteerd(false);
+            } else {
+                model.setGeselecteerd(true);
+            }
+            update();
+        });
     }
     
             
@@ -45,6 +54,8 @@ public class DobbelsteenView extends Region {
     public void update(){
         if(model.isGeselecteerd()){
             achterkant.setFill(Color.BLUEVIOLET);     
+        } else {
+            achterkant.setFill(Color.BEIGE); 
         }
     }
 }

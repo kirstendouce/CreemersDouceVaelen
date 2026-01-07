@@ -116,14 +116,6 @@ public class Dobbelsteen {
         return geselecteerd;
     }
     
-    public void selecteren(){
-         geselecteerd = true;
-    }
-    
-    public void deselecteren(){
-         geselecteerd = false;
-    }
-    
     public void setGeselecteerd(boolean geselecteerd){
         this.geselecteerd = geselecteerd;
     }

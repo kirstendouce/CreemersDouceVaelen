@@ -9,13 +9,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import be.inf1.creemersdoucevaelen.model.Boggle;
+import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
-import be.inf1.creemersdoucevaelen.view.DobbelsteenView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -79,8 +78,4 @@ public class BoggleFXMLController implements Initializable {
         view.update();
     }
     
-    public void handle(MouseEvent event){
-        model.selecteerDobbelstenen(dobbelsteen.getLetter());
-        view.update();
-    }
 }

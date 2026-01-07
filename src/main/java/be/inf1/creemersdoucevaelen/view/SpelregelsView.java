@@ -6,7 +6,7 @@ package be.inf1.creemersdoucevaelen.view;
 
 /**
  *
- * @author Kirsten Doucé
+ * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class SpelregelsView {
     

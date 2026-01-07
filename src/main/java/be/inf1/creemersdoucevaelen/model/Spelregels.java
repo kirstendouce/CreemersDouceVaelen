@@ -12,6 +12,6 @@ public class Spelregels {
     //Wat zijn de regels?
     //Woord min 3 letters
     //Puntentelling
-    //Enkel vertikaal, horizontaal, en diagonaal
-    //
+    //Enkel vertikaal, horizontaal, en diagonaal aangrenzend
+    //Elk woord maar 1 keer
 }

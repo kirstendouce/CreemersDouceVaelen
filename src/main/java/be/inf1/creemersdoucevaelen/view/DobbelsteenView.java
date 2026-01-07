@@ -29,7 +29,7 @@ public class DobbelsteenView extends Region {
         
         Text tekst = new Text(model.getLetter());
         
-        tekst.setX(30);
+        tekst.setX(31);
         tekst.setY(40);
         
         getChildren().addAll(achterkant, tekst);
@@ -51,7 +51,7 @@ public class DobbelsteenView extends Region {
     
     public void update(){
         if(model.isGeselecteerd()){
-            achterkant.setFill(Color.BLUEVIOLET);     
+            achterkant.setFill(Color.CHOCOLATE);     
         } else {
             achterkant.setFill(Color.BEIGE); 
         }

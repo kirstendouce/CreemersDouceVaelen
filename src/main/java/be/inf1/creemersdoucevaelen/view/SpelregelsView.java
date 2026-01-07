@@ -16,22 +16,30 @@ import javafx.scene.text.Text;
 public class SpelregelsView extends Region {
     
     public SpelregelsView() {
-       Rectangle regels = new Rectangle(220,400, Color.WHITE); 
+       Rectangle regels = new Rectangle(230,410, Color.WHITE); 
        
-             Text regel = new Text("Elk woord moet minstens 3 letters lang "
-                     + "\n zijn."
-               + "\n Je kan woorden enkel "
-               + "\n vormen door horizontaal, "
-               + "\n verticaal en diagonaal aangrenzende "
-               + "\n letters aan te klikken. "
-               + "\n Je kan elk woord maar 1 keer "
-               + "\n opgeven voor punten."
-               + "\n De puntentelling is als volgt: "
-               + "\n 3 of 4 letters = 1 punt "
-               + "\n 5 letters = 2 punten "
-               + "\n 6 letters = 3 punten "
-               + "\n 7 letters = 5 punten "
-               + "\n 8 of meer letters = 11 punten");
+             Text regel = new Text(
+                     "SPELREGELS"
+               + "\n"
+               + "\n1)"
+               + "\nElk woord moet minstens 3 letters lang zijn."
+               + "\n"
+               + "\n2)"
+               + "\nJe kan woorden enkel vormen door "
+               + "\nhorizontaal,verticaal en diagonaal "
+               + "\naangrenzende letters aan te klikken. "
+               + "\n"
+               + "\n3)"
+               + "\nJe kan elk woord maar 1 keer "
+               + "\nopgeven voor punten."
+               + "\n"
+               + "\n4)"
+               + "\nDe puntentelling is als volgt: "
+               + "\n3 of 4 letters = 1 punt "
+               + "\n5 letters = 2 punten "
+               + "\n6 letters = 3 punten "
+               + "\n7 letters = 5 punten "
+               + "\n8 of meer letters = 11 punten");
        regel.setY(30);
        getChildren().addAll(regels, regel);
        

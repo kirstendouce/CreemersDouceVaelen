@@ -9,5 +9,5 @@ package be.inf1.creemersdoucevaelen.model;
  * @author Kirsten Doucé
  */
 public class Spelregels {
-    
+    //Wat zijn de regels?
 }

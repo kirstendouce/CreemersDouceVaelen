@@ -116,6 +116,7 @@ public class Dobbelsteen {
         return geselecteerd;
     }
     
+    
     public void setGeselecteerd(boolean geselecteerd){
         this.geselecteerd = geselecteerd;
     }

@@ -56,6 +56,10 @@ public class DobbelsteenView extends Region {
             achterkant.setFill(Color.BEIGE); 
         }
     }
+    
+    /*public void resetGeselecteerd() {
+        achterkant.setFill(Color.BEIGE);
+    }*/
 }
 
 

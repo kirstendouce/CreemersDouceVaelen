@@ -9,8 +9,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import be.inf1.creemersdoucevaelen.model.Boggle;
-import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
+import be.inf1.creemersdoucevaelen.view.SpelregelsView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,10 +25,14 @@ public class BoggleFXMLController implements Initializable {
     
     private Boggle model;
     private BoggleView view; 
+    private SpelregelsView viewRegels;
     private int punten = 1;
     
     @FXML
     private AnchorPane anpBord;
+    
+    @FXML
+    private AnchorPane anpRegels;
     
     @FXML
     private Button btnBord;
@@ -50,8 +54,10 @@ public class BoggleFXMLController implements Initializable {
         // TODO
         model = new Boggle();
         view  = new BoggleView(model);
+        viewRegels = new SpelregelsView();
         
         anpBord.getChildren().add(view);
+        anpRegels.getChildren().add(viewRegels);
         
         
         update();
@@ -71,6 +77,7 @@ public class BoggleFXMLController implements Initializable {
        } else {
            view.foutWoord();
        }
+       //achterkantjes terug beige
     }
     
     public void update() {

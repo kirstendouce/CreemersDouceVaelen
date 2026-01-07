@@ -5,7 +5,7 @@
 package be.inf1.creemersdoucevaelen.view;
 
 import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
-import static javafx.print.PrintColor.COLOR;
+import java.util.ArrayList;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -18,7 +18,6 @@ import javafx.scene.text.Text;
 public class DobbelsteenView extends Region {
        private Dobbelsteen model;
        private Rectangle achterkant;
-       
        
        
     
@@ -44,7 +43,6 @@ public class DobbelsteenView extends Region {
             update();
         });
     }
-    
             
     public Dobbelsteen getModel() {
         return model;

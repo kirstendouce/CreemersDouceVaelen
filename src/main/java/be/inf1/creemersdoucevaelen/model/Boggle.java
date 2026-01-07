@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
     private Dobbelsteen[][] bord;
+    private Dobbelsteen dobbelsteen;
     private Woorden woordUitBoek;
     private String woord;
     private int punten;
@@ -43,9 +44,19 @@ public class Boggle {
         return dobbelstenen;
     }
     
+    public String getGeslecteerdWoord() {
+        woord = "";
+        for(Dobbelsteen d: dobbelstenen) {
+            if(d.isGeselecteerd()) {
+                woord += d.getLetter();
+            }
+        }
+        return woord;
+    }
+    
     public boolean woordcontrole() {
         //Is het opgegeven woord een woord uit het woordenboek?
-        if(woordUitBoek.isGeldigWoord(woord)) {
+        if(woordUitBoek.isGeldigWoord(getGeslecteerdWoord())) {
             setPunten(aantalPunten());
             return true;
         } else {

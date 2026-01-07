@@ -25,7 +25,6 @@ public class BoggleFXMLController implements Initializable {
     
     private Boggle model;
     private BoggleView view; 
-    private Dobbelsteen dobbelsteen;
     
     @FXML
     private AnchorPane anpBord;
@@ -65,7 +64,6 @@ public class BoggleFXMLController implements Initializable {
     
     @FXML
     void controleerWoord(ActionEvent event) {
-       //model.woordcontrole();
        if(model.woordcontrole()) {
            lblPunten.setText(model.getPunten() + "" );
            update();

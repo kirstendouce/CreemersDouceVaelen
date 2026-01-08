@@ -96,13 +96,16 @@ public void klikLetter(int rij, int kolom) {
     int laatsteRij = -1; // -1 want die telt de computer nog niet
     int laatsteKolom = -1;
     
-    if (laatsteRij == -1 && (Math.abs(rij - laatsteRij) <= 1 && Math.abs(kolom - laatsteKolom) <= 1)) {
+)     if (1 >= Math.abs(kolom + laatsteKolom)) {
+            if (Math.abs(rij + laatsteRij) <= 1) {
+                
+            }
+        }
+{
         System.out.println("Letter toegevoegd!");
         laatsteRij = rij;
         laatsteKolom = kolom;
-    } else {
-        System.out.println("Niet aangrenzend!");
-    }
+    } 
 }
     
 }

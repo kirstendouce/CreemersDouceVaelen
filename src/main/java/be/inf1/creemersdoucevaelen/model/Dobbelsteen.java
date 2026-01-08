@@ -13,8 +13,6 @@ public class Dobbelsteen {
     private String letter;
     private boolean geselecteerd;
     
-    int rij;
-    int kolom;
  
     /**
      * constructor voor elke dobbelsteen

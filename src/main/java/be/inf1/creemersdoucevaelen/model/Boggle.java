@@ -40,24 +40,26 @@ public class Boggle {
         return bord;
     } 
     
-    public boolean klikLetter(int rij, int kolom) {
+    public boolean magSelecteren(int rij, int kolom) {
     // Eerste klik: 
-    if (laatsteRij == -1 && laatsteKolom == -1) {
-        laatsteRij = rij;
-        laatsteKolom = kolom;
-        return true; 
+    if (laatsteRij == -1){
+        return true;
     }
 
-    if (Math.abs(rij - laatsteRij) <= 1 &&
-        Math.abs(kolom - laatsteKolom) <= 1 &&
-        !(rij == laatsteRij && kolom == laatsteKolom)) // controleren of dezelfde letter is 
-    {
-        
-        return true; 
-    }
+    int dr = Math.abs(rij - laatsteRij);
+    int dk = Math.abs(kolom - laatsteKolom);
 
-    return false; 
+    return dr <= 1 && dk <= 1;
 }
+    public void selecteer(int rij, int kolom){
+        Dobbelsteen d = bord[rij][kolom];
+        
+        if (!d.isGeselecteerd() && magSelecteren(rij, kolom)){
+            d.setGeselecteerd(true);
+            laatsteRij = rij;
+            laatsteKolom = kolom;
+        }
+    }
     
     public ArrayList<Dobbelsteen> getDobbelstenen() {
         dobbelstenen = new ArrayList<>();

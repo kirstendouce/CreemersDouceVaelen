@@ -4,6 +4,7 @@
  */
 package be.inf1.creemersdoucevaelen.view;
 
+import be.inf1.creemersdoucevaelen.model.Boggle;
 import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
 import java.util.ArrayList;
 import javafx.scene.layout.Region;
@@ -17,12 +18,14 @@ import javafx.scene.text.Text;
  */
 public class DobbelsteenView extends Region {
        private Dobbelsteen model;
+       private Boggle boggle;
        private Rectangle achterkant;
        
        
     
-    public  DobbelsteenView(Dobbelsteen model){
+    public  DobbelsteenView(be.inf1.creemersdoucevaelen.model.Dobbelsteen model){
         this.model = model;
+        this.boggle = boggle;
         achterkant = new Rectangle(70,70);
         achterkant.setFill(Color.BEIGE);
         achterkant.setStroke(Color.BLACK); 
@@ -35,11 +38,13 @@ public class DobbelsteenView extends Region {
         getChildren().addAll(achterkant, tekst);
         
         setOnMouseClicked(e -> {
+            boggle.selecteer(model);
             if(model.isGeselecteerd()) {
                 model.setGeselecteerd(false);
             } else {
                 model.setGeselecteerd(true);
             }
+        
             update();
         });
     }
@@ -56,6 +61,7 @@ public class DobbelsteenView extends Region {
             achterkant.setFill(Color.BEIGE); 
         }
         
+    
     }
     
     /*public void resetGeselecteerd() {

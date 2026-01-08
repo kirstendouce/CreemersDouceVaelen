@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import be.inf1.creemersdoucevaelen.model.Boggle;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
+import be.inf1.creemersdoucevaelen.view.DobbelsteenView;
 import be.inf1.creemersdoucevaelen.view.SpelregelsView;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -78,7 +79,8 @@ public class BoggleFXMLController implements Initializable {
        } else {
            view.foutWoord();
        }
-       //achterkantjes terug beige
+       model.resetGeselecteerd();
+       update();
     }
     
     public void update() {

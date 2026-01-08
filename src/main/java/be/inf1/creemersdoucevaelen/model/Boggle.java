@@ -36,6 +36,10 @@ public class Boggle {
         }
     } 
     
+    public Dobbelsteen[][] getBord() {
+        return bord;
+    } 
+    
     public boolean klikLetter(int rij, int kolom) {
     // Eerste klik: 
     if (laatsteRij == -1 && laatsteKolom == -1) {
@@ -126,5 +130,10 @@ public class Boggle {
         return punten;
     }  
     
+    public void resetGeselecteerd() {
+        for(Dobbelsteen d: dobbelstenen) {
+            d.setGeselecteerd(false);
+        }
+    }
 }
 

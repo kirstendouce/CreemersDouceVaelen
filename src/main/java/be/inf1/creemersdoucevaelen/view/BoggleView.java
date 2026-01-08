@@ -9,6 +9,7 @@ import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
 import java.util.ArrayList;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -27,7 +28,7 @@ public class BoggleView extends Region {
     {
         getChildren().clear();
         
-        model.maakBord();
+        Dobbelsteen [][]  bord = model.getBord();
         ArrayList<Dobbelsteen> dobbelstenen = model.getDobbelstenen();
         int getal = 0 ;
         int lengte = 0 ;
@@ -54,5 +55,4 @@ public class BoggleView extends Region {
         alert.setContentText("Sorry, maar het opgegeven woord klopt niet. Probeer een ander woord!");
         alert.showAndWait();
     }
-     
 }

@@ -18,19 +18,14 @@ public class SpelregelsView extends Region {
     public SpelregelsView() {
        Rectangle regels = new Rectangle(230,410, Color.WHITE); 
        
-             Text regel = new Text(
-                     "SPELREGELS"
-               + "\n"
-               + "\n1)Elk woord moet minstens 3 letters lang zijn."
-               + "\n"
-               + "\n2)Je kan woorden enkel vormen door "
+             Text regel = new Text("SPELREGELS \n"
+               + "\n1) Elk woord moet minstens 3 letters lang zijn."
+               + "\n2) Je kan woorden enkel vormen door "
                + "\nhorizontaal,verticaal en diagonaal "
                + "\naangrenzende letters aan te klikken. "
-               + "\n"
-               + "\n3)Je kan elk woord maar 1 keer "
+               + "\n3) Je kan elk woord maar 1 keer "
                + "\nopgeven voor punten."
-               + "\n"
-               + "\n4)De puntentelling is als volgt: "
+               + "\n4) De puntentelling is als volgt: "
                + "\n3 of 4 letters = 1 punt "
                + "\n5 letters = 2 punten "
                + "\n6 letters = 3 punten "

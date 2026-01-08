@@ -18,6 +18,8 @@ public class Boggle {
     private Woorden woordUitBoek;
     private String woord;
     private int punten;
+    private int laatsteRij = -1;
+    private int laatsteKolom = -1;
     
     public Boggle(){
         woordUitBoek = new Woorden();
@@ -33,6 +35,16 @@ public class Boggle {
             }
         }
     } 
+    
+    public void klikLetter(int rij, int kolom){
+        if(Math.abs(laatsteRij - rij) <= 1) {
+            if(Math.abs(laatsteKolom - kolom) <= 1){
+                laatsteKolom = kolom;
+                laatsteRij = rij;
+            } 
+        }
+        
+    }
     
     public ArrayList<Dobbelsteen> getDobbelstenen() {
         dobbelstenen = new ArrayList<>();

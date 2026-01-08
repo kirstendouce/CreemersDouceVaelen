@@ -27,8 +27,7 @@ public class BoggleFXMLController implements Initializable {
     private BoggleView view; 
     private SpelregelsView viewRegels;
     private int punten = 1;
-    private int laatsteRij = -1;
-    private int laatsteKolom = -1;
+    
     
     @FXML
     private AnchorPane anpBord;
@@ -85,6 +84,7 @@ public class BoggleFXMLController implements Initializable {
     public void update() {
         view.update();
     }
+}
     
   
 
@@ -93,16 +93,5 @@ public class BoggleFXMLController implements Initializable {
 
 
 
-public void klikLetter(int rij, int kolom) {
 
-    
-    if (1 >= Math.abs(kolom + laatsteKolom)) {
-            if (Math.abs(rij + laatsteRij) <= 1) {
-                
-        laatsteRij = rij;
-        laatsteKolom = kolom;
-            }
-        } 
-    }
-}
     

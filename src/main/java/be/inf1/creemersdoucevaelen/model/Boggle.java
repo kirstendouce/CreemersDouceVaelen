@@ -36,15 +36,24 @@ public class Boggle {
         }
     } 
     
-    public void klikLetter(int rij, int kolom){
-        if(Math.abs(rij + laatsteRij ) <= 1) {
-            if(Math.abs(1 + laatsteKolom ) <= 1){
-                laatsteKolom = kolom;
-                laatsteRij = rij;
-            } 
-        }
-        
+    public boolean klikLetter(int rij, int kolom) {
+    // Eerste klik: sla positie op
+    if (laatsteRij == -1 && laatsteKolom == -1) {
+        laatsteRij = rij;
+        laatsteKolom = kolom;
+        return true; 
     }
+
+    if (Math.abs(rij - laatsteRij) <= 1 &&
+        Math.abs(kolom - laatsteKolom) <= 1 &&
+        !(rij == laatsteRij && kolom == laatsteKolom)) // controleren of dezelfde letter is 
+    {
+        
+        return true; 
+    }
+
+    return false; 
+}
     
     public ArrayList<Dobbelsteen> getDobbelstenen() {
         dobbelstenen = new ArrayList<>();

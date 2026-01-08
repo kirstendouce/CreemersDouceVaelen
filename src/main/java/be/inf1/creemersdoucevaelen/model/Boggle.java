@@ -37,8 +37,8 @@ public class Boggle {
     } 
     
     public void klikLetter(int rij, int kolom){
-        if(Math.abs(laatsteRij - rij) <= 1) {
-            if(Math.abs(laatsteKolom - kolom) <= 1){
+        if(Math.abs(rij + laatsteRij ) <= 1) {
+            if(Math.abs(1 + laatsteKolom ) <= 1){
                 laatsteKolom = kolom;
                 laatsteRij = rij;
             } 

@@ -23,9 +23,9 @@ public class DobbelsteenView extends Region {
        
        
     
-    public  DobbelsteenView(be.inf1.creemersdoucevaelen.model.Dobbelsteen model){
+    public  DobbelsteenView(Dobbelsteen model){
         this.model = model;
-        this.boggle = boggle;
+        boggle = new Boggle();
         achterkant = new Rectangle(70,70);
         achterkant.setFill(Color.BEIGE);
         achterkant.setStroke(Color.BLACK); 
@@ -38,7 +38,7 @@ public class DobbelsteenView extends Region {
         getChildren().addAll(achterkant, tekst);
         
         setOnMouseClicked(e -> {
-            boggle.selecteer(model);
+            boggle.selecteerCoor(model);
             if(model.isGeselecteerd()) {
                 model.setGeselecteerd(false);
             } else {

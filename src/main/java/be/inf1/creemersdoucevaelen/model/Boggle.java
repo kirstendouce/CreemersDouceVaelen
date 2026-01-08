@@ -51,15 +51,29 @@ public class Boggle {
 
     return dr <= 1 && dk <= 1;
 }
+    
     public void selecteer(int rij, int kolom){
         Dobbelsteen d = bord[rij][kolom];
-        
+       
         if (!d.isGeselecteerd() && magSelecteren(rij, kolom)){
             d.setGeselecteerd(true);
             laatsteRij = rij;
             laatsteKolom = kolom;
         }
     }
+    
+    public void selecteerCoor(Dobbelsteen d){
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                if(bord[i][j] == d){
+                    selecteer(i,j);
+                    return;
+                }
+            }
+        }
+    }
+    
+  
     
     public ArrayList<Dobbelsteen> getDobbelstenen() {
         dobbelstenen = new ArrayList<>();

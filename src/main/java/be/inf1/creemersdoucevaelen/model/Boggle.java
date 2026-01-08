@@ -37,7 +37,7 @@ public class Boggle {
     } 
     
     public boolean klikLetter(int rij, int kolom) {
-    // Eerste klik: sla positie op
+    // Eerste klik: 
     if (laatsteRij == -1 && laatsteKolom == -1) {
         laatsteRij = rij;
         laatsteKolom = kolom;

@@ -18,14 +18,14 @@ import javafx.scene.text.Text;
  */
 public class DobbelsteenView extends Region {
        private Dobbelsteen model;
-       private Boggle boggle;
+       
        private Rectangle achterkant;
        
        
     
     public  DobbelsteenView(Dobbelsteen model){
         this.model = model;
-        boggle = new Boggle();
+       
         achterkant = new Rectangle(70,70);
         achterkant.setFill(Color.BEIGE);
         achterkant.setStroke(Color.BLACK); 
@@ -38,7 +38,6 @@ public class DobbelsteenView extends Region {
         getChildren().addAll(achterkant, tekst);
         
         setOnMouseClicked(e -> {
-            boggle.selecteerCoor(model);
             if(model.isGeselecteerd()) {
                 model.setGeselecteerd(false);
             } else {

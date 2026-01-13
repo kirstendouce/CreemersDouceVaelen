@@ -4,6 +4,8 @@
  */
 package be.inf1.creemersdoucevaelen.model;
 
+import javafx.scene.control.Button;
+
 /**
  *
  * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
@@ -12,6 +14,7 @@ public class Dobbelsteen {
     private double nummer;
     private String letter;
     private boolean geselecteerd;
+    private Button knop;
     
  
     /**
@@ -120,6 +123,14 @@ public class Dobbelsteen {
     
     public void setGeselecteerd(boolean geselecteerd){
         this.geselecteerd = geselecteerd;
+    }
+    
+    public void setKnop(Button knop) {
+        this.knop = knop; 
+    }
+    
+    public Button getKnop() { 
+        return knop; 
     }
 
 }

@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import be.inf1.creemersdoucevaelen.model.Boggle;
+import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
 import be.inf1.creemersdoucevaelen.view.DobbelsteenView;
 import be.inf1.creemersdoucevaelen.view.SpelregelsView;
@@ -47,6 +48,7 @@ public class BoggleFXMLController implements Initializable {
     
     @FXML
     private Button btnControleer;
+  
      
     /**
      * Initializes the controller class.
@@ -60,8 +62,6 @@ public class BoggleFXMLController implements Initializable {
         
         anpBord.getChildren().add(view);
         anpRegels.getChildren().add(viewRegels);
-        
-        
         update();
     }    
     

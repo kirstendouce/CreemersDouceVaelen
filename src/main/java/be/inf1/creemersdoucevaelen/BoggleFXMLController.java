@@ -35,7 +35,7 @@ public class BoggleFXMLController implements Initializable {
     private AnchorPane anpBord;
     
     @FXML
-    private AnchorPane anpRegels;
+    private Button btnSpelregels;
     
     @FXML
     private Button btnBord;
@@ -61,7 +61,8 @@ public class BoggleFXMLController implements Initializable {
         viewRegels = new SpelregelsView();
         
         anpBord.getChildren().add(view);
-        anpRegels.getChildren().add(viewRegels);
+        
+        
         update();
     }    
     
@@ -81,6 +82,11 @@ public class BoggleFXMLController implements Initializable {
        }
        model.resetGeselecteerd();
        update();
+    }
+    
+    @FXML
+    void toonSpelregels(ActionEvent event) {
+
     }
     
     public void update() {

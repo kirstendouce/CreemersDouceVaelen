@@ -7,27 +7,31 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.inf1.creemersdoucevaelen.BoggleFXMLController">
    <children>
-      <AnchorPane id="anpBord" fx:id="anpBord" layoutX="6.0" layoutY="61.0" prefHeight="332.0" prefWidth="400.0" />
-      <Button fx:id="btnBord" layoutX="43.0" layoutY="26.0" mnemonicParsing="false" onAction="#geklikt" text="Bord aanmaken">
+      <AnchorPane id="anpBord" fx:id="anpBord" layoutX="6.0" layoutY="61.0" prefHeight="332.0" prefWidth="588.0" />
+      <Button fx:id="btnBord" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#geklikt" text="Bord aanmaken">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Label fx:id="lblPunten" layoutX="309.0" layoutY="26.0" text="...">
+      <Label fx:id="lblPunten" layoutX="232.0" layoutY="26.0" text="...">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblScore" layoutX="246.0" layoutY="27.0" text="Score:">
+      <Label fx:id="lblScore" layoutX="166.0" layoutY="26.0" text="Score:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btnControleer" layoutX="415.0" layoutY="26.0" mnemonicParsing="false" onAction="#controleerWoord" text="Controleer Woord">
+      <Button fx:id="btnControleer" layoutX="289.0" layoutY="24.0" mnemonicParsing="false" onAction="#controleerWoord" text="Controleer Woord">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <AnchorPane id="anpRegels" fx:id="anpRegels" layoutX="406.0" layoutY="61.0" prefHeight="332.0" prefWidth="190.0" />
+      <Button fx:id="btnSpelregels" layoutX="444.0" layoutY="24.0" mnemonicParsing="false" onAction="#toonSpelregels" prefHeight="31.0" prefWidth="141.0" text="Spelregels">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

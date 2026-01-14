@@ -14,7 +14,6 @@ public class Dobbelsteen {
     private double nummer;
     private String letter;
     private boolean geselecteerd;
-    private Button knop;
     private int rij;
     private int kolom;
     
@@ -125,14 +124,6 @@ public class Dobbelsteen {
     
     public void setGeselecteerd(boolean geselecteerd){
         this.geselecteerd = geselecteerd;
-    }
-    
-    public void setKnop(Button knop) {
-        this.knop = knop; 
-    }
-    
-    public Button getKnop() { 
-        return knop; 
     }
     
     public Dobbelsteen(int rij, int kolom) {

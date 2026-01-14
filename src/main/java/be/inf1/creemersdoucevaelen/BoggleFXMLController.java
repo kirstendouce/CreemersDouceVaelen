@@ -9,14 +9,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import be.inf1.creemersdoucevaelen.model.Boggle;
-import be.inf1.creemersdoucevaelen.model.Dobbelsteen;
 import be.inf1.creemersdoucevaelen.view.BoggleView;
-import be.inf1.creemersdoucevaelen.view.DobbelsteenView;
 import be.inf1.creemersdoucevaelen.view.SpelregelsView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -86,8 +86,15 @@ public class BoggleFXMLController implements Initializable {
     
     @FXML
     void toonSpelregels(ActionEvent event) {
+        Stage spelregelsStage = new Stage();
+    
+        SpelregelsView regelsView = new SpelregelsView();
 
-    }
+        Scene scene = new Scene(regelsView, 600, 400);
+        spelregelsStage.setScene(scene);
+        spelregelsStage.show();
+        
+}
     
     public void update() {
         view.update();

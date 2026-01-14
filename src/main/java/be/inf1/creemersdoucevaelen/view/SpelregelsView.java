@@ -32,6 +32,7 @@ public class SpelregelsView extends Region {
                + "\n7 letters = 5 punten "
                + "\n8 of meer letters = 11 punten");
        regel.setY(30);
+       regel.setX(30);
        getChildren().addAll(regels, regel);
        
        //De regels enkel in het kader;

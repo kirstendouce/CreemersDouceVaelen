@@ -44,39 +44,49 @@ public class Boggle {
     
     public boolean magSelecteren(Dobbelsteen d) {
     // Eerste klik: 
-    int rij = d.getRij();
-    int kolom = d.getKolom();
     if (laatsteRij == -1){
         return true;
+    } else {
+        int rij = d.getRij();
+        int kolom = d.getKolom();
+    
+        int dr = Math.abs(rij - laatsteRij);
+        int dk = Math.abs(kolom - laatsteKolom);
+
+        return dr <= 1 && dk <= 1;
     }
-
-    int dr = Math.abs(rij - laatsteRij);
-    int dk = Math.abs(kolom - laatsteKolom);
-
-    return dr <= 1 && dk <= 1;
 }
     
-    public void selecteer(int rij, int kolom){
-        Dobbelsteen d = bord[rij][kolom];
+    public void selecteer(Dobbelsteen d){
+        /*Dobbelsteen d = bord[rij][kolom];
        
         if (!d.isGeselecteerd() && magSelecteren(d)){
             d.setGeselecteerd(true);
             geselecteerdeDobbelstenen.add(d);
             laatsteRij = rij;
             laatsteKolom = kolom;
+        }*/
+        
+        if (!d.isGeselecteerd()) {
+            if (laatsteRij == -1 || magSelecteren(d)) {
+                d.setGeselecteerd(true);
+                geselecteerdeDobbelstenen.add(d);
+                laatsteRij = d.getRij();
+                laatsteKolom = d.getKolom();
+            }
         }
     }
-    
+    /*
     public void selecteerCoor(Dobbelsteen d){
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 if(bord[i][j] == d){
-                    selecteer(i,j);
+                    selecteer(d);
                     return;
                 }
             }
         }
-    }
+    }*/
     
   
     

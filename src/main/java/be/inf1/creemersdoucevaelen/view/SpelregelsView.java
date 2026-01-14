@@ -16,7 +16,8 @@ import javafx.scene.text.Text;
 public class SpelregelsView extends Region {
     
     public SpelregelsView() {
-       Rectangle regels = new Rectangle(2000,1000, Color.BEIGE); 
+       Rectangle regels = new Rectangle(600,399, Color.BEIGE); 
+       regels.setStroke(Color.BLACK); 
        
         Text regel = new Text("SPELREGELS \n"
             + "\n1) Elk woord moet minstens 3 letters lang zijn."

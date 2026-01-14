@@ -86,6 +86,7 @@ public class BoggleFXMLController implements Initializable {
     public void update() {
         view.update();
     }
+    
 }
     
   

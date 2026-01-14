@@ -21,6 +21,8 @@ public class Boggle {
     private int punten;
     private int laatsteRij = -1;
     private int laatsteKolom = -1;
+    private Dobbelsteen vorige;
+
     
     public Boggle(){
         woordUitBoek = new Woorden();
@@ -55,22 +57,49 @@ public class Boggle {
 
         return dr <= 1 && dk <= 1;
     }*/
-    public boolean magSelecteren(Dobbelsteen d) {
+    //public boolean magSelecteren(Dobbelsteen d) {
     // Eerste klik mag altijd
-        if (geselecteerdeDobbelstenen.isEmpty()) {
+        //if (geselecteerdeDobbelstenen.isEmpty()) {
+            //return true;
+        //}
+
+        // Laatst geselecteerde dobbelsteen
+        //Dobbelsteen laatste = geselecteerdeDobbelstenen.get(geselecteerdeDobbelstenen.size() - 1);
+        //int dr = Math.abs(d.getRij() - laatste.getRij());
+        //int dk = Math.abs(d.getKolom() - laatste.getKolom());
+
+        // Mag alleen als het aangrenzend is
+        //return dr <= 1 && dk <= 1;
+    //}
+    
+    
+
+    public boolean magSelecteren(Dobbelsteen d) {
+
+        
+        if (vorige == null) {
+            vorige = d;
             return true;
         }
 
-        // Laatst geselecteerde dobbelsteen
-        Dobbelsteen laatste = geselecteerdeDobbelstenen.get(geselecteerdeDobbelstenen.size() - 1);
-        int dr = Math.abs(d.getRij() - laatste.getRij());
-        int dk = Math.abs(d.getKolom() - laatste.getKolom());
+        int EersteRij = vorige.getRij();
+        int EersteKolom = vorige.getKolom();
 
-        // Mag alleen als het aangrenzend is
-        return dr <= 1 && dk <= 1;
-    }
+        int TweedeRij = d.getRij();
+        int TweedeKolom = d.getKolom();
 
-    
+        boolean aangrenzend =
+            Math.abs(EersteRij - TweedeRij) <= 1 &&
+            Math.abs(EersteKolom - TweedeKolom) <= 1;
+
+        if (aangrenzend) {
+            vorige = d; 
+            return true;
+        }
+
+        return false;
+}
+
     public void selecteer(Dobbelsteen d){
         //d = bord[rij][kolom];
        

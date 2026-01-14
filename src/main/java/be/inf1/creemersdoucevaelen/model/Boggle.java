@@ -59,20 +59,6 @@ public class Boggle {
 
         return dr <= 1 && dk <= 1;
     }*/
-    //public boolean magSelecteren(Dobbelsteen d) {
-    // Eerste klik mag altijd
-        //if (geselecteerdeDobbelstenen.isEmpty()) {
-            //return true;
-        //}
-
-        // Laatst geselecteerde dobbelsteen
-        //Dobbelsteen laatste = geselecteerdeDobbelstenen.get(geselecteerdeDobbelstenen.size() - 1);
-        //int dr = Math.abs(d.getRij() - laatste.getRij());
-        //int dk = Math.abs(d.getKolom() - laatste.getKolom());
-
-        // Mag alleen als het aangrenzend is
-        //return dr <= 1 && dk <= 1;
-    //}
     
     
 

@@ -20,6 +20,7 @@ public class DobbelsteenView extends Region {
     private Dobbelsteen model;
     private Boggle boggle;
     private Rectangle achterkant;
+    
        
     public  DobbelsteenView(Dobbelsteen model, Boggle boggle){
         this.model = model;

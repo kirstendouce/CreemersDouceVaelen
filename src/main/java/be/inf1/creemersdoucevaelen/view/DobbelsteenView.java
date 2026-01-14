@@ -18,6 +18,7 @@ import javafx.scene.text.Text;
  */
 public class DobbelsteenView extends Region {
     private Dobbelsteen model;
+    private Boggle boggle;
     private Rectangle achterkant;
        
     public  DobbelsteenView(Dobbelsteen model){
@@ -35,8 +36,10 @@ public class DobbelsteenView extends Region {
         getChildren().addAll(achterkant, tekst);
         
         setOnMouseClicked(e -> {
-            if(model.isGeselecteerd()) {
-                model.setGeselecteerd(false);
+            if(!model.isGeselecteerd()) {
+                if(boggle.magSelecteren(model)) {
+                    
+                }
             } else {
                 model.setGeselecteerd(true);
             }

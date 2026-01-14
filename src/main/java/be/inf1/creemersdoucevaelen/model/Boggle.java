@@ -17,7 +17,7 @@ public class Boggle {
     private Dobbelsteen[][] bord;
     private Dobbelsteen dobbelsteen;
     private Woorden woordUitBoek;
-    private String woord;
+    //private String woord;
     private int punten;
     private int laatsteRij = -1;
     private int laatsteKolom = -1;
@@ -93,7 +93,7 @@ public class Boggle {
     }
     
     public String getGeselecteerdWoord() {
-        woord = "";
+        String woord = "";
         for(Dobbelsteen d: geselecteerdeDobbelstenen) {
 //            if(d.isGeselecteerd()) {
                 woord += d.getLetter();
@@ -104,6 +104,7 @@ public class Boggle {
     
     public boolean woordcontrole() {
         //Is het opgegeven woord een woord uit het woordenboek?
+        System.out.println("Te controleren woord: '" + getGeselecteerdWoord() + "'");
         if(woordUitBoek.isGeldigWoord(getGeselecteerdWoord())) {
             setPunten(aantalPunten());
             return true;
@@ -114,7 +115,8 @@ public class Boggle {
     
     public int aantalPunten() {
         //getGeselecteerdWoord();
-        switch(woord.length()){
+        String woordLengte = getGeselecteerdWoord();
+        switch(woordLengte.length()){
             case 3:
             case 4:
                 punten = 1;

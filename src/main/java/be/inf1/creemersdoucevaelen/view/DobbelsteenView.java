@@ -38,10 +38,12 @@ public class DobbelsteenView extends Region {
         setOnMouseClicked(e -> {
             if(!model.isGeselecteerd()) {
                 if(boggle.magSelecteren(model)) {
-                    
+                    model.setGeselecteerd(true);
+                } else {
+                    model.setGeselecteerd(false);
                 }
             } else {
-                model.setGeselecteerd(true);
+                model.setGeselecteerd(false);
             }
         
             update();

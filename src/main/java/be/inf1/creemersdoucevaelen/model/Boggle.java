@@ -42,8 +42,10 @@ public class Boggle {
         return bord;
     } 
     
-    public boolean magSelecteren(int rij, int kolom) {
+    public boolean magSelecteren(Dobbelsteen d) {
     // Eerste klik: 
+    int rij = d.getRij();
+    int kolom = d.getKolom();
     if (laatsteRij == -1){
         return true;
     }
@@ -57,7 +59,7 @@ public class Boggle {
     public void selecteer(int rij, int kolom){
         Dobbelsteen d = bord[rij][kolom];
        
-        if (!d.isGeselecteerd() && magSelecteren(rij, kolom)){
+        if (!d.isGeselecteerd() && magSelecteren(d)){
             d.setGeselecteerd(true);
             geselecteerdeDobbelstenen.add(d);
             laatsteRij = rij;

@@ -21,8 +21,9 @@ public class DobbelsteenView extends Region {
     private Boggle boggle;
     private Rectangle achterkant;
        
-    public  DobbelsteenView(Dobbelsteen model){
+    public  DobbelsteenView(Dobbelsteen model, Boggle boggle){
         this.model = model;
+        this.boggle = boggle;
        
         achterkant = new Rectangle(70,70);
         achterkant.setFill(Color.BEIGE);

@@ -42,7 +42,7 @@ public class Boggle {
         return bord;
     } 
     
-    public boolean magSelecteren(Dobbelsteen d) {
+    /*public boolean magSelecteren(Dobbelsteen d) {
     // Eerste klik: 
     if (laatsteRij == -1){
         return true;
@@ -54,29 +54,44 @@ public class Boggle {
         int dk = Math.abs(kolom - laatsteKolom);
 
         return dr <= 1 && dk <= 1;
+    }*/
+    public boolean magSelecteren(Dobbelsteen d) {
+    // Eerste klik mag altijd
+        if (geselecteerdeDobbelstenen.isEmpty()) {
+            return true;
+        }
+
+        // Laatst geselecteerde dobbelsteen
+        Dobbelsteen laatste = geselecteerdeDobbelstenen.get(geselecteerdeDobbelstenen.size() - 1);
+        int dr = Math.abs(d.getRij() - laatste.getRij());
+        int dk = Math.abs(d.getKolom() - laatste.getKolom());
+
+        // Mag alleen als het aangrenzend is
+        return dr <= 1 && dk <= 1;
     }
-}
+
     
     public void selecteer(Dobbelsteen d){
-        /*Dobbelsteen d = bord[rij][kolom];
+        //d = bord[rij][kolom];
        
         if (!d.isGeselecteerd() && magSelecteren(d)){
             d.setGeselecteerd(true);
             geselecteerdeDobbelstenen.add(d);
-            laatsteRij = rij;
-            laatsteKolom = kolom;
-        }*/
+            laatsteRij = d.getRij();
+            laatsteKolom = d.getKolom();
+        }
+
         
-        if (!d.isGeselecteerd()) {
+        /*if (!d.isGeselecteerd()) {
             if (laatsteRij == -1 || magSelecteren(d)) {
                 d.setGeselecteerd(true);
                 geselecteerdeDobbelstenen.add(d);
                 laatsteRij = d.getRij();
                 laatsteKolom = d.getKolom();
             }
-        }
+        }*/
     }
-    /*
+    
     public void selecteerCoor(Dobbelsteen d){
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
@@ -86,7 +101,7 @@ public class Boggle {
                 }
             }
         }
-    }*/
+    }
     
   
     
@@ -175,6 +190,6 @@ public class Boggle {
         geselecteerdeDobbelstenen.clear();
         laatsteRij = -1;
         laatsteKolom = -1;
+        
     }
 }
-

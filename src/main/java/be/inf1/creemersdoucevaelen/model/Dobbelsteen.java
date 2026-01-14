@@ -24,6 +24,8 @@ public class Dobbelsteen {
     public Dobbelsteen(int rij, int kolom) {
         this.rij = rij;
         this.kolom = kolom; 
+        this.geselecteerd = false;
+        
         nummer =(Math.random()*100)/4;
         
         switch( (int) Math.round(nummer)) {
@@ -137,10 +139,3 @@ public class Dobbelsteen {
     }
 
 }
-    
-    
-    
-    
-    
-    
-    

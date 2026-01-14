@@ -22,6 +22,8 @@ public class Boggle {
     private int laatsteRij = -1;
     private int laatsteKolom = -1;
     private Dobbelsteen vorige;
+    private StringBuilder huidigWoord = new StringBuilder();
+
 
     
     public Boggle(){
@@ -79,6 +81,7 @@ public class Boggle {
         
         if (vorige == null) {
             vorige = d;
+            voegLetterToe(d);
             return true;
         }
 
@@ -220,5 +223,13 @@ public class Boggle {
         laatsteRij = -1;
         laatsteKolom = -1;
         
+    }
+    
+    public void voegLetterToe(Dobbelsteen d) {
+        huidigWoord.append(d.getLetter());
+    }
+    
+    public String getHuidigWoord() {
+        return huidigWoord.toString();
     }
 }

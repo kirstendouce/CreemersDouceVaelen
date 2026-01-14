@@ -33,7 +33,7 @@ public class Boggle {
         bord = new Dobbelsteen[4][4];
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < 4; j++) {
-               bord [i][j] = new Dobbelsteen();
+               bord [i][j] = new Dobbelsteen(i,j);
             }
         }
     } 

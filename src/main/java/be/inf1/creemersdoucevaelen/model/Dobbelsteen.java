@@ -21,7 +21,9 @@ public class Dobbelsteen {
     /**
      * constructor voor elke dobbelsteen
      */
-    public Dobbelsteen() {
+    public Dobbelsteen(int rij, int kolom) {
+        this.rij = rij;
+        this.kolom = kolom; 
         nummer =(Math.random()*100)/4;
         
         switch( (int) Math.round(nummer)) {
@@ -124,11 +126,6 @@ public class Dobbelsteen {
     
     public void setGeselecteerd(boolean geselecteerd){
         this.geselecteerd = geselecteerd;
-    }
-    
-    public Dobbelsteen(int rij, int kolom) {
-        this.rij = rij;
-        this.kolom = kolom; 
     }
     
     public int getRij() {

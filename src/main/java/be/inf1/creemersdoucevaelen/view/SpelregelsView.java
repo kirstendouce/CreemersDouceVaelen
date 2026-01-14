@@ -18,20 +18,18 @@ public class SpelregelsView extends Region {
     public SpelregelsView() {
        Rectangle regels = new Rectangle(2000,1000, Color.BEIGE); 
        
-             Text regel = new Text("SPELREGELS \n"
-               + "\n1) Elk woord moet minstens 3 letters lang zijn."
-               + "\n2) Je kan woorden enkel vormen door horizontaal,verticaal en diagonaal aangrenzende letters aan te klikken. "
-               + "\n3) Je kan elk woord maar 1 keer opgeven voor punten."
-               + "\n4) De puntentelling is als volgt: "
-               + "\n3 of 4 letters = 1 punt "
-               + "\n5 letters = 2 punten "
-               + "\n6 letters = 3 punten "
-               + "\n7 letters = 5 punten "
-               + "\n8 of meer letters = 11 punten");
+        Text regel = new Text("SPELREGELS \n"
+            + "\n1) Elk woord moet minstens 3 letters lang zijn."
+            + "\n2) Je kan woorden enkel vormen door horizontaal,verticaal en diagonaal aangrenzende letters aan te klikken. "
+            + "\n3) Je kan elk woord maar 1 keer opgeven voor punten."
+            + "\n4) De puntentelling is als volgt: "
+            + "\n3 of 4 letters = 1 punt "
+            + "\n5 letters = 2 punten "
+            + "\n6 letters = 3 punten "
+            + "\n7 letters = 5 punten "
+            + "\n8 of meer letters = 11 punten");
        regel.setY(30);
        regel.setX(10);
-       getChildren().addAll(regels, regel);
-       
-       //De regels enkel in het kader;
+       getChildren().addAll(regels, regel);       
     }
 }

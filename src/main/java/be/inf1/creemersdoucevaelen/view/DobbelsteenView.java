@@ -37,15 +37,16 @@ public class DobbelsteenView extends Region {
         getChildren().addAll(achterkant, tekst);
         
         setOnMouseClicked(e -> {
-            if(!model.isGeselecteerd()) {
-                if(boggle.magSelecteren(model)) {
-                    model.setGeselecteerd(true);
-                } else {
-                    model.setGeselecteerd(false);
-                }
-            } else {
-                model.setGeselecteerd(false);
-            }
+            boggle.selecteer(model);  
+            //if(!model.isGeselecteerd()) {
+                //if(boggle.magSelecteren(model)) {
+                   // model.setGeselecteerd(true);
+                //} else {
+                   // model.setGeselecteerd(false);
+               // }
+           // } else {
+               // model.setGeselecteerd(false);
+            //}
         
             update();
         });

@@ -81,7 +81,6 @@ public class Boggle {
         
         if (vorige == null) {
             vorige = d;
-            voegLetterToe(d);
             return true;
         }
 
@@ -96,7 +95,7 @@ public class Boggle {
             Math.abs(EersteKolom - TweedeKolom) <= 1;
 
         if (aangrenzend) {
-            vorige = d; 
+            vorige = d;
             return true;
         }
 

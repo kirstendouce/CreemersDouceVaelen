@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
+    private ArrayList<Dobbelsteen> geselecteerdeDobbelstenen;
     private Dobbelsteen[][] bord;
     private Dobbelsteen dobbelsteen;
     private Woorden woordUitBoek;
@@ -23,6 +24,7 @@ public class Boggle {
     
     public Boggle(){
         woordUitBoek = new Woorden();
+        geselecteerdeDobbelstenen = new ArrayList<>();
         maakBord();
     }
     
@@ -57,6 +59,7 @@ public class Boggle {
        
         if (!d.isGeselecteerd() && magSelecteren(rij, kolom)){
             d.setGeselecteerd(true);
+            geselecteerdeDobbelstenen.add(d);
             laatsteRij = rij;
             laatsteKolom = kolom;
         }
@@ -85,19 +88,23 @@ public class Boggle {
         return dobbelstenen;
     }
     
-    public String getGeslecteerdWoord() {
+    public ArrayList<Dobbelsteen> getGeselecteerdeDobbelstenen() {
+        return geselecteerdeDobbelstenen;
+    }
+    
+    public String getGeselecteerdWoord() {
         woord = "";
-        for(Dobbelsteen d: dobbelstenen) {
-            if(d.isGeselecteerd()) {
+        for(Dobbelsteen d: geselecteerdeDobbelstenen) {
+//            if(d.isGeselecteerd()) {
                 woord += d.getLetter();
-            }
+//            }
         }
         return woord;
     }
     
     public boolean woordcontrole() {
         //Is het opgegeven woord een woord uit het woordenboek?
-        if(woordUitBoek.isGeldigWoord(getGeslecteerdWoord())) {
+        if(woordUitBoek.isGeldigWoord(getGeselecteerdWoord())) {
             setPunten(aantalPunten());
             return true;
         } else {
@@ -106,6 +113,7 @@ public class Boggle {
     }
     
     public int aantalPunten() {
+        //getGeselecteerdWoord();
         switch(woord.length()){
             case 3:
             case 4:
@@ -147,9 +155,12 @@ public class Boggle {
     }  
     
     public void resetGeselecteerd() {
-        for(Dobbelsteen d: dobbelstenen) {
+        for(Dobbelsteen d: geselecteerdeDobbelstenen) {
             d.setGeselecteerd(false);
         }
+        geselecteerdeDobbelstenen.clear();
+        laatsteRij = -1;
+        laatsteKolom = -1;
     }
 }
 

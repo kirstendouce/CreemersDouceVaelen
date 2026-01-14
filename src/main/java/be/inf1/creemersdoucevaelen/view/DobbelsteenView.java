@@ -17,12 +17,9 @@ import javafx.scene.text.Text;
  * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class DobbelsteenView extends Region {
-       private Dobbelsteen model;
+    private Dobbelsteen model;
+    private Rectangle achterkant;
        
-       private Rectangle achterkant;
-       
-       
-    
     public  DobbelsteenView(Dobbelsteen model){
         this.model = model;
        
@@ -59,17 +56,7 @@ public class DobbelsteenView extends Region {
         } else {
             achterkant.setFill(Color.BEIGE); 
         }
-        
-    
     }
-    
-    /*public void resetGeselecteerd() {
-        for(int i = 0; i<16; i++) {
-            if(model.isGeselecteerd()) {
-                achterkant.setFill(Color.BEIGE);
-            }
-        }
-    }*/
 }
 
 

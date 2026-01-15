@@ -16,7 +16,6 @@ public class Dobbelsteen {
     private boolean geselecteerd;
     private int rij;
     private int kolom;
-    
  
     /**
      * constructor voor elke dobbelsteen
@@ -110,8 +109,7 @@ public class Dobbelsteen {
             default: 
                 letter = "A";
                 break;
-        }
-        
+        }  
     }
 
     /**
@@ -125,17 +123,15 @@ public class Dobbelsteen {
         return geselecteerd;
     }
     
-    
     public void setGeselecteerd(boolean geselecteerd){
         this.geselecteerd = geselecteerd;
     }
     
     public int getRij() {
-    return rij;
+        return rij;
     }
 
     public int getKolom() {
-    return kolom;
+        return kolom;
     }
-
 }

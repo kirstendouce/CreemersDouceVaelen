@@ -20,10 +20,12 @@ public class Boggle {
     private int laatsteKolom = -1;
     private Dobbelsteen vorige;
     private Dobbelsteen laatste;
+    private ArrayList<String> gebruiktePaden;
     
     public Boggle(){
         woordUitBoek = new Woorden();
         geselecteerdeDobbelstenen = new ArrayList<>();
+        gebruiktePaden = new ArrayList<>();
         maakBord();
     }
     
@@ -83,8 +85,15 @@ public class Boggle {
             vorige = null;
         } else {
             vorige = laatste;
+        }      
+    }
+    
+    public String maakPad() {
+        String pad = "";
+        for (Dobbelsteen d : geselecteerdeDobbelstenen) {
+            pad += d.getRij() + "-" + d.getKolom() + ",";
         }
-        
+        return pad;
     }
   
     public ArrayList<Dobbelsteen> getDobbelstenen() {
@@ -112,8 +121,12 @@ public class Boggle {
     public boolean woordcontrole() {
         //Is het opgegeven woord een woord uit het woordenboek?
         System.out.println("Te controleren woord: '" + getGeselecteerdWoord() + "'");
-        if(woordUitBoek.isGeldigWoord(getGeselecteerdWoord())) {
+        if (gebruiktePaden.contains(maakPad())) {
+            System.out.println("Dit pad is al gebruikt."); 
+            return false;
+        } else if(woordUitBoek.isGeldigWoord(getGeselecteerdWoord())) {
             setPunten(aantalPunten());
+            gebruiktePaden.add(maakPad());
             return true;
         } else {
             return false; 
@@ -171,5 +184,9 @@ public class Boggle {
         laatsteRij = -1;
         laatsteKolom = -1;
         vorige = null;
+    }
+    
+    public void resetGebruiktePaden() {
+        gebruiktePaden.clear();
     }
 }

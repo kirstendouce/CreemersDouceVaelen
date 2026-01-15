@@ -27,9 +27,7 @@ public class BoggleFXMLController implements Initializable {
     
     private Boggle model;
     private BoggleView view; 
-    private SpelregelsView viewRegels;
     private int punten = 0;
-    
     
     @FXML
     private AnchorPane anpBord;
@@ -48,20 +46,16 @@ public class BoggleFXMLController implements Initializable {
     
     @FXML
     private Button btnControleer;
-  
-     
+   
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         model = new Boggle();
         view  = new BoggleView(model);
-        viewRegels = new SpelregelsView();
         
         anpBord.getChildren().add(view);
-        
         
         update();
     }    
@@ -70,6 +64,7 @@ public class BoggleFXMLController implements Initializable {
     void geklikt(ActionEvent event) {
         model.maakBord();
         model.setPunten(0);
+        model.resetGebruiktePaden();
         punten = 0;
         lblPunten.setText(punten +"");
         update();
@@ -102,13 +97,3 @@ public class BoggleFXMLController implements Initializable {
         view.update();
     }   
 }
-    
-  
-
-
-
-
-
-
-
-    

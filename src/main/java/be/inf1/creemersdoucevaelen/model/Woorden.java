@@ -13,9 +13,8 @@ import java.util.ArrayList;
  *
  * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
-
+//Door middel van chatgpt:
 public class Woorden {
-
     private ArrayList<String> woorden;
 
     public Woorden() {
@@ -29,20 +28,16 @@ public class Woorden {
 
         // Dit haalt het bestand uit de resources folder
         try (InputStream is = getClass().getResourceAsStream(pad)) {
-
             if (is == null) {
                 System.out.println("wordlist.txt niet gevonden op pad: " + pad);
                 return;
             }
-
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
                 String regel;
                 while ((regel = reader.readLine()) != null) {
                     woorden.add(regel.trim().toUpperCase());
-                    //System.out.println(regel.trim().toUpperCase());
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Fout bij inlezen woordenbestand");

@@ -97,6 +97,7 @@ public class BoggleFXMLController implements Initializable {
             URL url = getClass().getResource(
                 "/be/inf1/creemersdoucevaelen/right_buzzer.mp3"
             );
+            // Code uit cursus
             mediaPlayer = new MediaPlayer(new Media(url.toString()));
             mediaPlayer.play();
         } else if(model.getGebruiktePaden().contains(model.getPad())) {
@@ -104,6 +105,7 @@ public class BoggleFXMLController implements Initializable {
             URL url = getClass().getResource(
                 "/be/inf1/creemersdoucevaelen/WahFailSoundEffect.mp3"
             );
+            // Code uit cursus
             mediaPlayer = new MediaPlayer(new Media(url.toString()));
             mediaPlayer.play();
             view.gebruiktWoord();
@@ -112,6 +114,7 @@ public class BoggleFXMLController implements Initializable {
             URL url = getClass().getResource(
                 "/be/inf1/creemersdoucevaelen/wrong_buzzer.mp3"
             );
+            // Code uit cursus
             mediaPlayer = new MediaPlayer(new Media(url.toString()));
             mediaPlayer.play();
             view.foutWoord();
@@ -122,6 +125,7 @@ public class BoggleFXMLController implements Initializable {
     
     @FXML
     void toonSpelregels(ActionEvent event) {
+        // Code uit cursus
         Stage spelregelsStage = new Stage();
         SpelregelsView regelsView = new SpelregelsView();
 

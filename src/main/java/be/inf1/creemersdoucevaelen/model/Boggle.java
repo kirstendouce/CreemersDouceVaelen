@@ -13,6 +13,7 @@ import java.util.ArrayList;
 //  Woorden.java is overgenomen uit chatgpt
 //  Wordlist.txt is online afgehaald
 //  URL's in controller opgehaald uit chatgpt
+//  In controller paar keer code uit de cursus
 //  Maarten 30% 
 //  Kirsten 35%
 //  Manten 35%

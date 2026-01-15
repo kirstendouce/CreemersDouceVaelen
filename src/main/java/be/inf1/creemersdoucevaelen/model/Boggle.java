@@ -45,23 +45,24 @@ public class Boggle {
         if (vorige == null) {
             vorige = d;
             return true;
-        }
-
-        int EersteRij = vorige.getRij();
-        int EersteKolom = vorige.getKolom();
-
-        int TweedeRij = d.getRij();
-        int TweedeKolom = d.getKolom();
-
-        boolean aangrenzend =
-            Math.abs(EersteRij - TweedeRij) <= 1 &&
-            Math.abs(EersteKolom - TweedeKolom) <= 1;
-
-        if (aangrenzend) {
-            vorige = d;
-            return true;
         } else {
-            return false;
+
+            int eersteRij = vorige.getRij();
+            int eersteKolom = vorige.getKolom();
+
+            int tweedeRij = d.getRij();
+            int tweedeKolom = d.getKolom();
+
+            boolean aangrenzend =
+                Math.abs(eersteRij - tweedeRij) <= 1 &&
+                Math.abs(eersteKolom - tweedeKolom) <= 1;
+
+            if (aangrenzend) {
+                vorige = d;
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -74,24 +75,12 @@ public class Boggle {
         }
     }
     
-    /*public void selecteerCoor(Dobbelsteen d){
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < 4; j++){
-                if(bord[i][j] == d){
-                    selecteer(d);
-                    return;
-                }
-            }
-        }
-    }*/
-    
     public void deselecteer(Dobbelsteen d) {
         d.setGeselecteerd(false);
         geselecteerdeDobbelstenen.remove(d);
         
     }
   
-    
     public ArrayList<Dobbelsteen> getDobbelstenen() {
         dobbelstenen = new ArrayList<>();
         for(int i = 0; i < 4; i++) {

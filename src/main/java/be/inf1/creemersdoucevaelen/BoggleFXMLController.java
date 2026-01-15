@@ -28,7 +28,7 @@ public class BoggleFXMLController implements Initializable {
     private Boggle model;
     private BoggleView view; 
     private SpelregelsView viewRegels;
-    private int punten = 1;
+    private int punten = 0;
     
     
     @FXML
@@ -69,13 +69,16 @@ public class BoggleFXMLController implements Initializable {
     @FXML
     void geklikt(ActionEvent event) {
         model.maakBord();
+        model.setPunten(0);
+        punten = 0;
+        lblPunten.setText(punten +"");
         update();
     }
     
     @FXML
     void controleerWoord(ActionEvent event) {
-        punten += model.getPunten();
        if(model.woordcontrole()) {
+           punten += model.getPunten();
            lblPunten.setText(punten + "" );
        } else {
            view.foutWoord();
@@ -92,14 +95,12 @@ public class BoggleFXMLController implements Initializable {
 
         Scene scene = new Scene(regelsView, 600, 400);
         spelregelsStage.setScene(scene);
-        spelregelsStage.show();
-        
-}
+        spelregelsStage.show();    
+    }
     
     public void update() {
         view.update();
-    }
-    
+    }   
 }
     
   

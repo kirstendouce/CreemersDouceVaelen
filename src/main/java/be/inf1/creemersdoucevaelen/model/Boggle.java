@@ -56,6 +56,14 @@ public class Boggle {
         return bord;
     } 
     
+    public String getPad() {
+        return maakPad();
+    }
+    
+    public ArrayList<String> getGebruiktePaden() {
+        return gebruiktePaden;
+    }
+    
     public ArrayList<Dobbelsteen> getDobbelstenen() {
         dobbelstenen = new ArrayList<>();
         for(int i = 0; i < 4; i++) {
@@ -79,7 +87,7 @@ public class Boggle {
     }
     
     public boolean isLaatste(Dobbelsteen d) {
-        return geselecteerdeDobbelstenen.size() > 0 && //Is er iets geselecteerd? 
+        return geselecteerdeDobbelstenen.size() > 0 && 
         geselecteerdeDobbelstenen.get(geselecteerdeDobbelstenen.size()-1) == d;
     }
 

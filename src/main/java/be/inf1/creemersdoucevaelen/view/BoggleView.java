@@ -54,4 +54,11 @@ public class BoggleView extends Region {
         alert.setContentText("Sorry, maar het opgegeven woord klopt niet. Probeer een ander woord!");
         alert.showAndWait();
     }
+    
+    public void gebruiktWoord() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Gebruikt woord");
+        alert.setContentText("Sorry, maar het opgegeven woord is al eens gebruikt! Probeer een nieuw pad!");
+        alert.showAndWait();
+    }
 }

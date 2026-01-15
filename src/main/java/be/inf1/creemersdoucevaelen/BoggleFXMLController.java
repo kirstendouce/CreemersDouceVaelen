@@ -99,6 +99,14 @@ public class BoggleFXMLController implements Initializable {
             );
             mediaPlayer = new MediaPlayer(new Media(url.toString()));
             mediaPlayer.play();
+        } else if(model.getGebruiktePaden().contains(model.getPad())) {
+            // URL ophalen via chatgpt
+            URL url = getClass().getResource(
+                "/be/inf1/creemersdoucevaelen/WahFailSoundEffect.mp3"
+            );
+            mediaPlayer = new MediaPlayer(new Media(url.toString()));
+            mediaPlayer.play();
+            view.gebruiktWoord();
         } else {
             // URL ophalen via chatgpt
             URL url = getClass().getResource(

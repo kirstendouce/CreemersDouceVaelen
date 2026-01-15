@@ -24,8 +24,7 @@ public class BoggleView extends Region {
         update();
     }
     
-    public void update()
-    {
+    public void update() {
         getChildren().clear();
         
         Dobbelsteen [][]  bord = model.getBord();

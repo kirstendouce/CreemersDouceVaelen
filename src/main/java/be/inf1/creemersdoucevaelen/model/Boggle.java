@@ -10,6 +10,8 @@ import java.util.ArrayList;
  *
  * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
+//  Woorden.java is overgenomen uit chatgpt
+//  Wordlist.txt is online afgehaald
 public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
     private ArrayList<Dobbelsteen> geselecteerdeDobbelstenen;
@@ -30,7 +32,6 @@ public class Boggle {
     }
     
     public void maakBord() {
-        //spelbord aanmaken
         bord = new Dobbelsteen[4][4];
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < 4; j++) {
@@ -39,9 +40,39 @@ public class Boggle {
         }
     } 
     
+    public void setPunten(int punten) {
+        this.punten = punten;
+    }
+    
+    public int getPunten() {
+        return punten;
+    }  
+    
     public Dobbelsteen[][] getBord() {
         return bord;
     } 
+    
+    public ArrayList<Dobbelsteen> getDobbelstenen() {
+        dobbelstenen = new ArrayList<>();
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+               dobbelstenen.add(bord[i][j]);
+            }
+        }
+        return dobbelstenen;
+    }
+    
+    public ArrayList<Dobbelsteen> getGeselecteerdeDobbelstenen() {
+        return geselecteerdeDobbelstenen;
+    }
+    
+    public String getGeselecteerdWoord() {
+        String woord = "";
+        for(Dobbelsteen d: geselecteerdeDobbelstenen) {
+            woord += d.getLetter();
+        }
+        return woord;
+    }
 
     public boolean magSelecteren(Dobbelsteen d) {
         if (vorige == null) {
@@ -95,31 +126,8 @@ public class Boggle {
         }
         return pad;
     }
-  
-    public ArrayList<Dobbelsteen> getDobbelstenen() {
-        dobbelstenen = new ArrayList<>();
-        for(int i = 0; i < 4; i++) {
-            for(int j = 0; j < 4; j++) {
-               dobbelstenen.add(bord[i][j]);
-            }
-        }
-        return dobbelstenen;
-    }
-    
-    public ArrayList<Dobbelsteen> getGeselecteerdeDobbelstenen() {
-        return geselecteerdeDobbelstenen;
-    }
-    
-    public String getGeselecteerdWoord() {
-        String woord = "";
-        for(Dobbelsteen d: geselecteerdeDobbelstenen) {
-            woord += d.getLetter();
-        }
-        return woord;
-    }
-    
+
     public boolean woordcontrole() {
-        //Is het opgegeven woord een woord uit het woordenboek?
         System.out.println("Te controleren woord: '" + getGeselecteerdWoord() + "'");
         if (gebruiktePaden.contains(maakPad())) {
             System.out.println("Dit pad is al gebruikt."); 
@@ -134,7 +142,6 @@ public class Boggle {
     }
     
     public int aantalPunten() {
-        //getGeselecteerdWoord();
         String woordLengte = getGeselecteerdWoord();
         switch(woordLengte.length()){
             case 3:
@@ -167,14 +174,6 @@ public class Boggle {
         }
         return punten;
     }
-    
-    public void setPunten(int punten) {
-        this.punten = punten;
-    }
-    
-    public int getPunten() {
-        return punten;
-    }  
     
     public void resetGeselecteerd() {
         for(Dobbelsteen d: geselecteerdeDobbelstenen) {

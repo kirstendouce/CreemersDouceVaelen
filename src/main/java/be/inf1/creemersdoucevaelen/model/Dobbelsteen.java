@@ -111,20 +111,16 @@ public class Dobbelsteen {
                 break;
         }  
     }
-
-    /**
-     * @return the letter
-     */
+    
+    public void setGeselecteerd(boolean geselecteerd){
+        this.geselecteerd = geselecteerd;
+    }
     public String getLetter() {
         return letter;
     }
     
     public boolean isGeselecteerd(){
         return geselecteerd;
-    }
-    
-    public void setGeselecteerd(boolean geselecteerd){
-        this.geselecteerd = geselecteerd;
     }
     
     public int getRij() {

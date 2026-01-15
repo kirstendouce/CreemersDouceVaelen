@@ -24,7 +24,6 @@ import javafx.stage.Stage;
  * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
 public class BoggleFXMLController implements Initializable {
-    
     private Boggle model;
     private BoggleView view; 
     private int punten = 0;
@@ -56,7 +55,6 @@ public class BoggleFXMLController implements Initializable {
         view  = new BoggleView(model);
         
         anpBord.getChildren().add(view);
-        
         update();
     }    
     
@@ -85,7 +83,6 @@ public class BoggleFXMLController implements Initializable {
     @FXML
     void toonSpelregels(ActionEvent event) {
         Stage spelregelsStage = new Stage();
-    
         SpelregelsView regelsView = new SpelregelsView();
 
         Scene scene = new Scene(regelsView, 600, 400);

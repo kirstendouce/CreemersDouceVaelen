@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Maarten Creemers, Kirsten Doucé & Manten Vaelen
  */
-//Door middel van chatgpt:
+// Afgehaald van chatgpt:
 public class Woorden {
     private ArrayList<String> woorden;
 

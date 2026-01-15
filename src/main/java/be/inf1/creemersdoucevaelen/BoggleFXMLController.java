@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +29,8 @@ public class BoggleFXMLController implements Initializable {
     private Boggle model;
     private BoggleView view; 
     private int punten = 0;
+    private int hoogstePunten;
+    private MediaPlayer mediaPlayer;
     
     @FXML
     private AnchorPane anpBord;
@@ -44,6 +48,12 @@ public class BoggleFXMLController implements Initializable {
     private Label lblScore;
     
     @FXML
+    private Label lblHoogstePunten;
+
+    @FXML
+    private Label lblHoogsteScore;
+    
+    @FXML
     private Button btnControleer;
    
     /**
@@ -55,29 +65,51 @@ public class BoggleFXMLController implements Initializable {
         view  = new BoggleView(model);
         
         anpBord.getChildren().add(view);
+        
+        lblHoogsteScore.setLayoutY(380);
+        lblHoogstePunten.setLayoutY(380);
         update();
     }    
     
     @FXML
     void geklikt(ActionEvent event) {
+        if(hoogstePunten < punten) {
+            hoogstePunten = punten;
+            lblHoogstePunten.setText(punten + "");
+        }
+        model.resetGebruiktePaden();
+        model.resetGeselecteerd();
         model.maakBord();
         model.setPunten(0);
         model.resetGebruiktePaden();
         punten = 0;
-        lblPunten.setText(punten +"");
+        lblPunten.setText(punten +"");  
         update();
     }
-    
+  
     @FXML
     void controleerWoord(ActionEvent event) {
-       if(model.woordcontrole()) {
-           punten += model.getPunten();
-           lblPunten.setText(punten + "" );
-       } else {
-           view.foutWoord();
-       }
-       model.resetGeselecteerd();
-       update();
+        if (model.woordcontrole()) {
+            punten += model.getPunten();
+            lblPunten.setText(punten + "");
+
+            // URL ophalen via chatgpt
+            URL url = getClass().getResource(
+                "/be/inf1/creemersdoucevaelen/right_buzzer.mp3"
+            );
+            mediaPlayer = new MediaPlayer(new Media(url.toString()));
+            mediaPlayer.play();
+        } else {
+            // URL ophalen via chatgpt
+            URL url = getClass().getResource(
+                "/be/inf1/creemersdoucevaelen/wrong_buzzer.mp3"
+            );
+            mediaPlayer = new MediaPlayer(new Media(url.toString()));
+            mediaPlayer.play();
+            view.foutWoord();
+        }
+        model.resetGeselecteerd();
+        update();
     }
     
     @FXML

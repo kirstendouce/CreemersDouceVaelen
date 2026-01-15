@@ -5,4 +5,5 @@ module be.inf1.creemersdoucevaelen {
 
     opens be.inf1.creemersdoucevaelen to javafx.fxml;
     exports be.inf1.creemersdoucevaelen;
+    requires javafx.media;
 }

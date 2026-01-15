@@ -12,6 +12,10 @@ import java.util.ArrayList;
  */
 //  Woorden.java is overgenomen uit chatgpt
 //  Wordlist.txt is online afgehaald
+//  URL's in controller opgehaald uit chatgpt
+//  Maarten 30% 
+//  Kirsten 35%
+//  Manten 35%
 public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
     private ArrayList<Dobbelsteen> geselecteerdeDobbelstenen;

@@ -73,6 +73,10 @@ public class Boggle {
         }
         return woord;
     }
+    
+    public Dobbelsteen getLaatste() {
+        return laatste;
+    }
 
     public boolean magSelecteren(Dobbelsteen d) {
         if (vorige == null) {

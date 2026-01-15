@@ -15,16 +15,11 @@ public class Boggle {
     private ArrayList<Dobbelsteen> dobbelstenen;
     private ArrayList<Dobbelsteen> geselecteerdeDobbelstenen;
     private Dobbelsteen[][] bord;
-    private Dobbelsteen dobbelsteen;
     private Woorden woordUitBoek;
-    //private String woord;
     private int punten;
     private int laatsteRij = -1;
     private int laatsteKolom = -1;
     private Dobbelsteen vorige;
-    private StringBuilder huidigWoord = new StringBuilder();
-
-
     
     public Boggle(){
         woordUitBoek = new Woorden();
@@ -45,26 +40,8 @@ public class Boggle {
     public Dobbelsteen[][] getBord() {
         return bord;
     } 
-    
-    /*public boolean magSelecteren(Dobbelsteen d) {
-    // Eerste klik: 
-    if (laatsteRij == -1){
-        return true;
-    } else {
-        int rij = d.getRij();
-        int kolom = d.getKolom();
-    
-        int dr = Math.abs(rij - laatsteRij);
-        int dk = Math.abs(kolom - laatsteKolom);
-
-        return dr <= 1 && dk <= 1;
-    }*/
-    
-    
 
     public boolean magSelecteren(Dobbelsteen d) {
-
-        
         if (vorige == null) {
             vorige = d;
             return true;
@@ -83,33 +60,21 @@ public class Boggle {
         if (aangrenzend) {
             vorige = d;
             return true;
+        } else {
+            return false;
         }
-
-        return false;
-}
+    }
 
     public void selecteer(Dobbelsteen d){
-        //d = bord[rij][kolom];
-       
         if (!d.isGeselecteerd() && magSelecteren(d)){
             d.setGeselecteerd(true);
             geselecteerdeDobbelstenen.add(d);
             laatsteRij = d.getRij();
             laatsteKolom = d.getKolom();
         }
-
-        
-        /*if (!d.isGeselecteerd()) {
-            if (laatsteRij == -1 || magSelecteren(d)) {
-                d.setGeselecteerd(true);
-                geselecteerdeDobbelstenen.add(d);
-                laatsteRij = d.getRij();
-                laatsteKolom = d.getKolom();
-            }
-        }*/
     }
     
-    public void selecteerCoor(Dobbelsteen d){
+    /*public void selecteerCoor(Dobbelsteen d){
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 if(bord[i][j] == d){
@@ -118,8 +83,13 @@ public class Boggle {
                 }
             }
         }
-    }
+    }*/
     
+    public void deselecteer(Dobbelsteen d) {
+        d.setGeselecteerd(false);
+        geselecteerdeDobbelstenen.remove(d);
+        
+    }
   
     
     public ArrayList<Dobbelsteen> getDobbelstenen() {
@@ -139,9 +109,7 @@ public class Boggle {
     public String getGeselecteerdWoord() {
         String woord = "";
         for(Dobbelsteen d: geselecteerdeDobbelstenen) {
-//            if(d.isGeselecteerd()) {
-                woord += d.getLetter();
-//            }
+            woord += d.getLetter();
         }
         return woord;
     }
@@ -207,14 +175,6 @@ public class Boggle {
         geselecteerdeDobbelstenen.clear();
         laatsteRij = -1;
         laatsteKolom = -1;
-        
-    }
-    
-    public void voegLetterToe(Dobbelsteen d) {
-        huidigWoord.append(d.getLetter());
-    }
-    
-    public String getHuidigWoord() {
-        return huidigWoord.toString();
+        vorige = null;
     }
 }

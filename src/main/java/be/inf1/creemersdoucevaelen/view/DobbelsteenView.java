@@ -38,7 +38,9 @@ public class DobbelsteenView extends Region {
         
         setOnMouseClicked(e -> {
             if(model.isGeselecteerd()) {
+              if (boggle.isLaatste(model)) {
                 boggle.deselecteer(model);
+              }
             } else if(!model.isGeselecteerd()){
                 boggle.selecteer(model);
             }

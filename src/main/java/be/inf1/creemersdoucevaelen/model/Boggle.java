@@ -74,8 +74,9 @@ public class Boggle {
         return woord;
     }
     
-    public Dobbelsteen getLaatste() {
-        return laatste;
+    public boolean isLaatste(Dobbelsteen d) {
+        return geselecteerdeDobbelstenen.size() > 0 && //Is er iets geselecteerd? 
+        geselecteerdeDobbelstenen.get(geselecteerdeDobbelstenen.size()-1) == d;
     }
 
     public boolean magSelecteren(Dobbelsteen d) {

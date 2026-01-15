@@ -4,7 +4,6 @@
  */
 package be.inf1.creemersdoucevaelen.model;
 
-import be.inf1.creemersdoucevaelen.view.DobbelsteenView;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +19,7 @@ public class Boggle {
     private int laatsteRij = -1;
     private int laatsteKolom = -1;
     private Dobbelsteen vorige;
+    private Dobbelsteen laatste;
     
     public Boggle(){
         woordUitBoek = new Woorden();
@@ -46,7 +46,8 @@ public class Boggle {
             vorige = d;
             return true;
         } else {
-
+            laatste = vorige;
+            
             int eersteRij = vorige.getRij();
             int eersteKolom = vorige.getKolom();
 
@@ -78,6 +79,11 @@ public class Boggle {
     public void deselecteer(Dobbelsteen d) {
         d.setGeselecteerd(false);
         geselecteerdeDobbelstenen.remove(d);
+        if(geselecteerdeDobbelstenen.size() == 0) {
+            vorige = null;
+        } else {
+            vorige = laatste;
+        }
         
     }
   
